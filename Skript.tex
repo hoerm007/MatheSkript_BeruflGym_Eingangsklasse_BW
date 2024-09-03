@@ -1,0 +1,369 @@
+\documentclass[a4paper,12pt, headsepline, ngerman, toc=left]{scrartcl}
+
+%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{scrlayer-scrpage}
+\usepackage[nodisplayskipstretch]{setspace} %vspace before/after math mode
+\usepackage{babel}				            %Silbentrennung mit ngerman
+\usepackage{booktabs} 			            %For prettier tables
+\usepackage{mathtools}  		            %Mathe-Paket
+\usepackage{amssymb}			            %Symbole
+\usepackage{bbm}			             	%\mathbbm{N} für natürliche Zahlen o.ä.
+\usepackage{color}				            %\textcolor{blue}{text...}
+\usepackage[dvipsnames]{xcolor}             % Mehr Farben
+\usepackage[T1]{fontenc}		            %Umlaute
+\usepackage{cancel}					        %Durchstreichen von Dingen in Formeln
+\usepackage{enumitem}				        %Aufzählungen [label=\alph*)]
+\usepackage{tcolorbox} 				        %Merkboxen
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}			%Hyperlinks setzen
+\usepackage[]{exercise}			            %Nach hyperref einbinden! answerdelayed, noanswer
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{pgfmath}
+\usepackage{systeme}				        % Für LGS
+\sysdelim..							        % Keine geschweifte Klammer neben LGS
+\usepackage{nicematrix}
+\usepackage{bm}						        %\bm{xxx} for bold in math mode
+\usepackage{adjustbox}
+\usepackage[]{geometry}                     %[showframe] debugging mit Boxen
+\usepackage{marvosym}                       %\Lightning
+\usepackage{multirow}
+\usepackage{etoolbox}
+%%%%%%%%%%%%%%%%%%%%%%% MATHE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%d des dx für Integrale
+\newcommand{\td}{\ \text{d}}
+%besserer Abstand der Klammer bei sin(x), cos(x), usw.
+\newcommand{\sinn}[1]{\sin\hspace{-1pt}\left(#1\right)}
+\newcommand{\arcsinn}[1]{\sin^{-1}\hspace{-2pt}\left(#1\right)}
+\newcommand{\coss}[1]{\cos\hspace{-1pt}\left(#1\right)}
+\newcommand{\arccoss}[1]{\cos^{-1}\hspace{-2pt}\left(#1\right)}
+%Mengenzeichen
+\newcommand{\mH}{\mathcal{H}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+%Umkringelte Nummern für LGS
+\newcommand*\gaussrow[1]{\tikz[baseline=(char.base)]{
+        \node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
+
+%%%%%%%%%%%%%%%%%%%% IF-TOGGLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtoggle{qrcode} %Steuert das Erstellen der QR-Codes
+\toggletrue{qrcode}
+%\togglefalse{qrcode}
+\newtoggle{titlepage} %Titelseite und Inhaltsverzeichnis
+\toggletrue{titlepage}
+%\togglefalse{titlepage}
+\newtoggle{ausfuellen} %Ausfüllen der Arbeitsblätter
+\toggletrue{ausfuellen}
+%\togglefalse{ausfuellen}
+%%%%%%%%%%%%%%%%%%%%%% FARBEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Häufig verwendetet Farben
+%ForestGreen 		RGB(  0,155, 85)
+%YellowOrange		RGB(250,162, 26)
+\definecolor{tcback}{rgb}{.95,.95,.95} %Hintergrundfarbe der Merkboxen
+\iftoggle{ausfuellen}{
+    %Farben für ein ausgefülltes Skript. Hier kann man die Schriftfarbe für die Teile, die eigentlich die SuS ausfüllen sollen, vorgeben.
+    \definecolor{loes}{rgb}{.0,.13,.8}
+    \definecolor{loestc}{rgb}{.6,.0,.1}
+}{
+    %Farben für ein leeres Skript (Farbe der ausgefüllten Teile entspricht der Hintergrundfarbe).
+    \definecolor{loes}{rgb}{1,1,1} %Weiß
+    \definecolor{loestc}{rgb}{.95,.95,.95} %Hintergrundfarbe der Merkboxen
+}
+%%%%%%%%%%%%%%%%% FORMATIERUNGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\titlepagestyle}{empty}
+\setlist[enumerate]{nosep, topsep=0pt}	%Kleinere Abstände bei Aufzählungen
+\setlist[itemize]{noitemsep, topsep=0pt}
+%Geometry anpassen
+\geometry{a4paper, portrait, left=1.5cm, right=2cm, top=1cm, bottom=2cm, headsep=0.2cm, includehead, head=27.30193pt}
+%Merkboxen
+\tcbset{
+%	frame code={}
+%	center title,
+%	left=0pt,
+%	right=0pt,
+%	top=0pt,
+%	bottom=0pt,
+	colback=tcback,
+%	colframe=white,
+%	width=\dimexpr\textwidth\relax,
+%	enlarge left by=0mm,
+%	boxsep=5pt,
+%	arc=0pt,outer arc=0pt,
+}
+%Fake(sub)sections tauchen im Inhaltsverzeichnis auf, erstellen im Dokument aber keine Überschriften
+\newcommand{\fakesection}[1]{%
+	\par\refstepcounter{section}% Increase section counter
+	\sectionmark{#1}% Add section mark (header)
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}% Add section to ToC
+	% Add more content here, if needed.
+}
+\newcommand{\fakesubsection}[1]{%
+	\par\refstepcounter{subsection}% Increase section counter
+	\subsectionmark{#1}% Add section mark (header)
+	\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}% Add section to ToC
+	% Add more content here, if needed.
+}
+%Kein hässlicher Abstand vor Klammer auf/zu mit \left(..\right)
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+%Kein vertikaler Abstand vor/nach Mathegruppen
+\newcommand{\zerodisplayskips}{%
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+%Textformatierung
+\raggedbottom
+\onehalfspacing
+\pagestyle{scrheadings}                     %KOMA-Script mit Kopf-Fuß-Zeilen
+%Exercise-Package anpassen
+\renewcommand{\listexercisename}{Liste der Aufgaben}%
+\renewcommand{\ExerciseName}{Aufgabe}%
+\renewcommand{\AnswerName}{L{\"o}sung zu Aufgabe}%
+\renewcommand{\ExerciseListName}{Aufg.}%
+\renewcommand{\AnswerListName}{L{\"o}sung}%
+\renewcommand{\ExePartName}{Teil}%
+\renewcommand{\ArticleOf}{von\ }%
+\renewcommand{\ExerciseHeader}{%
+    \textbf{\large\ExerciseHeaderDifficulty\ExerciseName\ %
+        \ExerciseHeaderNB\normalsize\ExerciseHeaderTitle\ExerciseHeaderOrigin}\medskip}
+\renewcommand{\AnswerHeader}{
+    \newpage\textbf{L{\"o}sung zu \ExerciseName\ \ExerciseHeaderNB}\smallskip}
+%\Lightning in math mode
+\renewcommand{\mvchr}[1]{{\mbox{\mvs\symbol{#1}}}}
+\usetikzlibrary{intersections}
+%Trennlinie in Kopfzeile
+\setkomafont{headsepline}{\color{white}}
+\makeatletter
+\renewcommand*{\@pnumwidth}{2em}%Platz für 3-stellige Seitenzahlen im toc
+\makeatother
+
+\begin{document}
+    \iftoggle{ausfuellen}{\def\AUSGEFUELLT{AUSGEFUELLT}}{\def\AUSGEFUELLT{}}
+    \newlength{\imgheight}
+    \newlength{\qrheight}
+	\setlength\parindent{0pt} %keine Einrückungen beim Start eines Paragraphen
+    \setlength\tabcolsep{6pt}
+	%Header
+	\lohead{ }
+	%\cohead{} %im Arbeitsblatt
+	\rohead{}
+	\lehead{lehead}
+	\cehead{cehead}
+	\rehead{rehead}
+    \iftoggle{titlepage}{%
+	\title{Mathematik
+
+		Ein Skript für das Berufskolleg}
+	\author{Hermann Maier}
+    \maketitle
+    \newpage
+    \null\vfill
+    \begin{tcolorbox}[colframe=red]
+        Aktuelle Version sowie Quelldateien unter
+
+        \href{https://github.com/hoerm007/MatheSkript_BK1BK2BKFH_BW}{https://github.com/hoerm007/MatheSkript\_BK1BK2BKFH\_BW}%
+    \end{tcolorbox}
+
+    \bigskip
+
+    \copyright {\the\year} Maier, Hermann, \href{mailto:maier@privatemail.com}{maier@privatemail.com}
+
+    Dieses Werk unterliegt der CC BY-NC-SA 4.0 Lizenz \href{https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.de}{https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.de}.
+
+    Sie dürfen:
+    \begin{itemize}
+        \item Teilen — das Material in jedwedem Format oder Medium vervielfältigen und weiterverbreiten
+        \item Bearbeiten — das Material remixen, verändern und darauf aufbauen
+    \end{itemize}
+    Unter folgenden Bedingungen:
+    \begin{itemize}
+        \item Namensnennung - Sie müssen angemessene Urheber- und Rechteangaben machen , einen Link zur Lizenz beifügen und angeben, ob Änderungen vorgenommen wurden. Diese Angaben dürfen in jeder angemessenen Art und Weise gemacht werden, allerdings nicht so, dass der Eindruck entsteht, der Lizenzgeber unterstütze gerade Sie oder Ihre Nutzung besonders.
+        \item Nicht kommerziell - Sie dürfen das Material nicht für kommerzielle Zwecke nutzen.
+        \item Weitergabe unter gleichen Bedingungen - Wenn Sie das Material remixen, verändern oder anderweitig direkt darauf aufbauen, dürfen Sie Ihre Beiträge nur unter derselben Lizenz wie das Original verbreiten.
+    \end{itemize}
+
+    \iftoggle{qrcode}{\bigskip
+
+    QR-Codes erzeugt mit \href{https://forqrcode.com/}{forqrcode.com}}{}}{}%
+    \newpage
+    \cofoot[\pagemark]{\pagemark}
+    \iftoggle{titlepage}{\tableofcontents}{}%
+    \newpage
+    \setkomafont{headsepline}{\color{black}}
+	\lohead{Mathematik}
+    %\cohead{} %im Arbeitsblatt
+    \rohead{Datum \phantom{00.00.0000}}
+    \lehead{lehead}
+    \cehead{cehead}
+    \rehead{rehead}
+	\def\grundlagen{./Arbeitsblaetter/Grundlagen}
+	\def\linFkt{./Arbeitsblaetter/LineareFunktionen}
+	\def\quadFkt{./Arbeitsblaetter/QuadratischeFunktionen}
+	\def\ganzFkt{./Arbeitsblaetter/GanzrationaleFunktionen}
+	\def\eFkt{./Arbeitsblaetter/EFunktionen}
+	\def\ableitung{./Arbeitsblaetter/Ableitung}
+	\def\lgs{./Arbeitsblaetter/LGS}
+	\def\optimierung{./Arbeitsblaetter/Optimierung}
+	\def\integration{./Arbeitsblaetter/Integration}
+	\def\trigonometrie{./Arbeitsblaetter/Trigonometrie}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\fakesection{Grundlagen}
+	\input{./Arbeitsblaetter/Grundlagen/Mengen.tex}
+	\newpage
+	\input{./Arbeitsblaetter/Grundlagen/EinfachesRechnen.tex}
+	\newpage
+	\input{./Arbeitsblaetter/Grundlagen/Mitternachtsformel.tex}
+	\newpage
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\fakesection{Lineare Funktionen}
+	\input{./Arbeitsblaetter/LineareFunktionen/Begriffe.tex}
+	\newpage
+	\input{./Arbeitsblaetter/LineareFunktionen/Einfuehrung.tex}
+	\newpage
+	\input{./Arbeitsblaetter/LineareFunktionen/Punktprobe.tex}
+	\newpage
+	\input{./Arbeitsblaetter/LineareFunktionen/Nullstellen.tex}
+	\newpage
+	\input{./Arbeitsblaetter/LineareFunktionen/Lage.tex}
+	\newpage
+	\input{./Arbeitsblaetter/LineareFunktionen/Schnittpunkt.tex}
+	\newpage
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\fakesection{Quadratische Funktionen}
+	\input{./Arbeitsblaetter/QuadratischeFunktionen/Scheitelform.tex}
+	\newpage
+	\input{./Arbeitsblaetter/QuadratischeFunktionen/Hauptform.tex}
+	\newpage
+	\input{./Arbeitsblaetter/QuadratischeFunktionen/Produktform.tex}
+	\newpage
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\fakesection{Ganzrationale Funktionen}
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Einfuehrung.tex}
+	\newpage
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Potenzfunktionen.tex}
+	\newpage
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Hauptform.tex}
+	\newpage
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Symmetrie.tex}
+	\newpage
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Verhalten.tex}
+	\newpage
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Nullstellen.tex}
+	\newpage
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Wurzeln.tex}
+	\newpage
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Produktform.tex}
+	\newpage
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\fakesection{Exponentialfunktionen}%TODO Aufgaben mit Prozenten
+	\input{./Arbeitsblaetter/EFunktionen/Einfuehrung.tex}
+	\newpage
+ 	\input{./Arbeitsblaetter/EFunktionen/Begriffe.tex}
+	\newpage
+%   \input{./Arbeitsblaetter/EFunktionen/WachstumZerfall.tex}%TODO fertig erstellen
+%	 \newpage
+ 	\input{./Arbeitsblaetter/EFunktionen/WaagrechteAsymptoten.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/EFunktionen/Ln.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/EFunktionen/FktAuf.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/EFunktionen/SchiefeAsymptoten.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/EFunktionen/NaehrungsweiseNST.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/EFunktionen/Aufgaben.tex}
+ 	\newpage
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \fakesection{Differentialrechnung}
+ 	\input{./Arbeitsblaetter/Ableitung/MittlereAenderungsrate.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/GrafischesAbleiten.tex}%TODO Geogebra
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/MomentanPunktweise.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/MomentanAllg.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Ableitungsregeln.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Faktorregel.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Potenzregel.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Summenregel.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/eFktAbleitung.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/SchaubilderDerAbleitung.tex}%TODO Geogebra
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Tangenten.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Normalen.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Beruehren.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Monotonie.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/HoehereAbleitungen.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Extrempunkte.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Kruemmung.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/Wendepunkte.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Ableitung/FktGleichungenAufstellen.tex} %TODO Aufgaben erstellen
+ 	\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \fakesection{Lineare Gleichungssysteme}
+ 	\input{./Arbeitsblaetter/LGS/LGSEinfuehrung.tex}
+ 	\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \fakesection{Optimierung}
+ 	\input{./Arbeitsblaetter/Optimierung/Optimierung.tex}
+ 	\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \fakesection{Integration}
+ 	\input{./Arbeitsblaetter/Integration/Stammfunktionen.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Integration/Integral_grafisch.tex}%TODO Geogebra
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Integration/Integral_berechnen.tex}%overfull hbox, falls ref fehlt, kein Problem
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Integration/Flaechenberechnung.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Integration/IntGrenze_bestimmen.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Integration/FlaecheZwischenFunktionen.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Integration/VerhaeltnisVonFlaechen.tex}
+ 	\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \fakesection{Trigonometrie}
+ 	\input{./Arbeitsblaetter/Trigonometrie/Bogenmass.tex}%TODO Geogebra
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/DefinitionSinCos.tex}%TODO Geogebra
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/EigenschaftenSinCos.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/AllgSinusUndCosinus.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/TrigonometrieExtremWende.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/SinCosGleichungenOhneXStreckung.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/SinCosGleichungenMitXStreckung.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/TrigoAbleitung.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/TrigoStammfunktionen.tex}
+ 	\newpage
+\end{document}

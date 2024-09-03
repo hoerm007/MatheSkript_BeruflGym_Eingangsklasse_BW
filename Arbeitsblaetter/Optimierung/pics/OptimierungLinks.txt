@@ -1,0 +1,6 @@
+Beispiel1.png	https://www.geogebra.org/m/cxbqrqxz
+Aufgabe_1.png	https://www.geogebra.org/m/bpm6d9z7
+Aufgabe_2.png	https://www.geogebra.org/m/bsju83ap
+Aufgabe_3.png	https://www.geogebra.org/m/sq4gxae9
+Aufgabe_4.png	https://www.geogebra.org/m/ptbksvzz
+Aufgabe_5.png	https://www.geogebra.org/m/wuxpt9u8

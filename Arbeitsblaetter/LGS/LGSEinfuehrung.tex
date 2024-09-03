@@ -1,0 +1,426 @@
+% !TeX root = ../../Skript.tex
+\cohead{\Large\textbf{LGS}}
+\fakesubsection{Lineare Gleichungssysteme}
+Eine lineare Gleichung besteht aus einer oder mehreren Unbekannten, die jeweils nur mit der Hochzahl 1 vorkommen. Zudem dürfen keine Produkte von mehreren Unbekannten vorkommen, z.B. ist \mbox{\(2x-5y=3\)} eine lineare Gleichung mit den Unbekannten \(x\) und \(y\). Dagegen sind \mbox{\(-3x^2+5y=0\)} oder \mbox{\(-3x\cdot y=2\)} keine linearen Gleichungen.
+
+Unter einem linearen Gleichungssystem (LGS) versteht man mehrere lineare Gleichungen, in denen die gleichen Unbekannten vorkommen, z.B.
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.3\textwidth-4ex}
+            \[\sysalign{r,r}\systeme{2x+y=3, -x+3y=-5}\]
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.7\textwidth-4ex}
+            Das LGS hat die Lösung \(x=2\) und \(y=-1\), da diese Werte beide Gleichungen gleichzeitig erfüllen:
+
+            \(2\cdot 2-1=3\) und \(-2+3\cdot (-1)=-5\)
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+Wir betrachten lineare Gleichungssysteme, die aus 3 Unbekannten und 3 Gleichungen bestehen. Unsere Überlegungen lassen sich aber auch auf Gleichungssysteme mit 4 Unbekannten und 4 Gleichungen usw. übertragen.
+
+Zum Lösen linearer Gleichungssysteme verwenden wir das gaußsche Eliminationsverfahren. Mit Hilfe von \textbf{elementaren Umformungen} bringen wir das LGS in die \textbf{obere Dreiecksform}.
+
+\bigskip
+
+\textbf{Matrixform}
+
+Zur Übersichtlichkeit und um Schreibarbeit zu sparen, verwenden wir die Matrixform. Dazu schreiben wir nur die Koeffizienten vor den Unbekannten in eine Matrix und ersetzen die Gleichzeichen durch eine vertikale Linie. Betrachten wir folgendes Beispiel:
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \[\systeme{5x+3z=-1, 2x-2y+4z=-2, -2x+y-2z=\phantom{-}0}\]
+    \end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{.2\textwidth}\centering
+            \vspace{.5cm}
+            in
+
+            Matrixform
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                    5  &  0 &  3 & -1\\
+                    2  & -2 &  4 & -2\\
+                    -2 &  1 & -2 &  0
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+\textbf{Elementare Umformungen:} Es gibt 3 elementare Umformungen. Diese ändern das Gleichungssystem, aber nicht die Lösung:
+\begin{enumerate}
+    \item \textbf{Vertauschen zweier Zeilen:}
+
+    \medskip
+
+    \begin{minipage}{\linewidth}
+        \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.5\linewidth-4ex}
+                \[\begin{pNiceArray}{rrr|r}[last-col]
+                    5  &  0 &  3 & -1&\gaussrow{1}\leftrightarrow \gaussrow{3}\\
+                    2  & -2 &  4 & -2&\\
+                    -2 &  1 & -2 &  0&
+                \end{pNiceArray}\]
+        \end{minipage}}%
+        \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.5\linewidth-4ex}
+                \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                        -2 &  1 & -2 &  0\\
+                        2  & -2 &  4 & -2\\
+                        5  &  0 &  3 & -1
+                    \end{pNiceArray}\]}
+        \end{minipage}}%
+    \end{minipage}
+
+    \bigskip
+
+    \item \textbf{Multiplizieren einer Zeile mit einer Zahl ungleich Null:}
+
+    \medskip
+
+    \begin{minipage}{\linewidth}
+        \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.5\linewidth-4ex}
+                \[\begin{pNiceArray}{rrr|r}[last-col]
+                    -2 &  1 & -2 &  0&\\
+                    2  & -2 &  4 & -2&\\
+                    5  &  0 &  3 & -1&\vert \cdot 0,4
+                \end{pNiceArray}\]
+        \end{minipage}}%
+        \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.5\linewidth-4ex}
+                \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                        -2 &  1 & -2 &  0\\
+                        2  & -2 &  4 & -2\\
+                        2  &  0 &  1,2 & -0,4
+                    \end{pNiceArray}\]}
+        \end{minipage}}%
+    \end{minipage}
+
+    \bigskip
+
+    \item \textbf{Addition einer einer Zeile zu einer anderen:}
+
+    \medskip
+
+    \begin{minipage}{\linewidth}
+        \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.5\linewidth-4ex}
+                \[\begin{pNiceArray}{rrr|r}[last-col]
+                    -2 &  1 & -2\phantom{,0} &  0\phantom{,0}&\\
+                    2  & -2 &  4\phantom{,0} & -2\phantom{,0}&\vert + \gaussrow{1}\\
+                    2  &  0 &  1,2 & -0,4&\vert + \gaussrow{1}
+                \end{pNiceArray}\]
+        \end{minipage}}%
+        \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.5\linewidth-4ex}
+                \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                        -2 &  1 & -2\phantom{,0} &  0\phantom{,0}\\
+                        0  & -1 &  2\phantom{,0} & -2\phantom{,0}\\
+                        0  &  1 &  -0,8 & -0,4
+                    \end{pNiceArray}\]}
+        \end{minipage}}%
+    \end{minipage}
+\end{enumerate}
+\newpage
+In unserem Beispiel haben wir nun beinahe die obere Dreiecksform erreicht:
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \[\begin{pNiceArray}{rrr|r}[last-col]
+                -2 &  1 & -2\phantom{,0} &  0\phantom{,0}&\\
+                0  & -1 &  2\phantom{,0} & -2\phantom{,0}&\\
+                0  &  1 &  -0,8 & -0,4&\vert +\gaussrow{2}
+            \end{pNiceArray}\]
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                    -2 &  1 & -2\phantom{,0} &  0\phantom{,0}\\
+                    0  & -1 &  2\phantom{,0} & -2\phantom{,0}\\
+                    0  &  0 &  1,2 & -2,4
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+Die \textbf{obere Dreiecksform} ist erreicht, wenn nur noch im oberen Dreieck Zahlen ungleich Null stehen:
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 2ex 0ex 2ex 0ex}{\begin{minipage}{.3\textwidth-4ex+5.8pt}
+            \[\begin{pNiceArray}{ccc|c}
+                -2 &  \phantom{-}1 & -2\phantom{,0} &  \phantom{-}0\phantom{,0}\\
+                0  & -1 &  \phantom{-}2\phantom{,0} & -2\phantom{,0}\\
+                0  &  0 &  1,2 & -2,4
+                \CodeAfter
+                \tikz \path[draw=blue, thick] (2-1)--(3-2);
+                \tikz \path[draw=blue, thick] (3-1)--(3-2);
+                \tikz \path[draw=blue, thick] (3-1)--(2-1);
+                \tikz \path[draw=red, thick] (1-1)--(1-3);
+                \tikz \path[draw=red, thick] (1-1)--(3-3);
+                \tikz \path[draw=red, thick] (1-3)--(3-3);
+            \end{pNiceArray}\]
+    \end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{.7\textwidth-5.8pt}
+            Im unteren, blau markierten Dreieck stehen nur noch Nullen. Nur im oberen, rot markierten Dreieck stehen noch Zahlen ungleich Null. ACHTUNG: Im roten Dreieck dürfen auch Nullen stehen.
+    \end{minipage}}%
+\end{minipage}
+
+Die Lösung des LGS lässt sich von der oberen Dreiecksform aus leicht durch Rückwärtsauflösen bestimmen. Dazu gehen wir die Zeilen von unten nach oben, also rückwärts durch:
+
+\begin{itemize}
+    \item Dritte Zeile:
+
+    \textcolor{loes}{\(1,2z=-2,4 \Rightarrow z=-2\)}
+
+    \item Zweite Zeile:
+
+    \textcolor{loes}{\(-y+2\cdot(-2)=-2 \Rightarrow y=-2\)}
+
+    \item Erste Zeile:
+
+    \textcolor{loes}{\(-2x+1\cdot(-2)-2\cdot(-2)=0 \Rightarrow x=1\)}
+\end{itemize}
+
+Hinweis: Üblicherweise kombiniert man die beiden elementaren Umformungen der Multiplikation einer Zeile mit einer Zahl und der Addition einer Zeile zu einer anderen, z.B.:
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \[\begin{pNiceArray}{rrr|r}[last-col]
+                -2 &  1 & -2 &  0&\\
+                2  & -2 &  4 & -2&\\
+                5  &  0 &  3 & -1&\vert  +2,5\cdot\gaussrow{1}
+            \end{pNiceArray}\]
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                    -2 &  1\phantom{,5} & -2 &  0\\
+                    2  & -2\phantom{,5} &  4 & -2\\
+                    0  &  2,5&  -2 & -1
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+Zum Lösen eines LGS mit Hilfe des gaußschen Eliminationsverfahrens führt man also immer folgende Schritte aus:
+
+\medskip
+
+\begin{enumerate}
+    \item \textbf{Aufstellen der Matrixform.}
+    \item \textbf{Durch elementare Umformungen die Matrix auf die obere Dreiecksform bringen.}
+    \item \textbf{Durch Rückwärtsauflösen die Lösung des LGS bestimmen.}
+\end{enumerate}
+
+\begin{Exercise}[title={\raggedright Bestimme die Lösung der folgenden LGS.}, label=LGS_A1]
+
+    \begin{minipage}{\textwidth}
+        \adjustbox{valign=t}{\begin{minipage}{\linewidth/\real{3}}
+                \begin{enumerate}[label=\alph*)]
+                    \setcounter{enumi}{0}
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{x+y+z=5,-y+3z=2,2z=6}\]\end{minipage}}%
+
+                    \bigskip
+
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{x+y=0,3y+2z=0,-2z=-6}\]\end{minipage}}%
+                \end{enumerate}
+        \end{minipage}}%
+        \adjustbox{valign=t}{\begin{minipage}{\linewidth/\real{3}}
+                \begin{enumerate}[label=\alph*)]
+                    \setcounter{enumi}{2}
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{5x+y+z=1,y+z=6,-3y+9z=-6}\]\end{minipage}}%
+
+                    \bigskip
+
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{2x-2y+z=2,2y-z=10,3y+z=5}\]\end{minipage}}%
+                \end{enumerate}
+        \end{minipage}}%
+        \adjustbox{valign=t}{\begin{minipage}{\linewidth/\real{3}}
+                \begin{enumerate}[label=\alph*)]
+                    \setcounter{enumi}{4}
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{4x+2y-2z=2,3x-y+2z=7,-x+y-2z=-5}\]\end{minipage}}%
+
+                    \bigskip
+
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{-x-y+z=-7,2x+y+z=-1,5x-y-6z=2}\]\end{minipage}}%
+                \end{enumerate}
+        \end{minipage}}%
+    \end{minipage}
+\end{Exercise}
+\newpage
+Die LGS bisher haben alle genau eine Lösung. Ein LGS kann aber auch keine Lösung haben oder sogar unendlich viele Lösungen. Die 3 möglichen Fälle (genau eine Lösung, keine Lösung, unendlich viele Lösungen) lassen sich an Hand der letzten Zeile in der Matrixform unterscheiden, \textbf{nachdem} diese auf die Zeilenstufenform gebracht wurde:
+
+\smallskip
+
+Beispiel 1: keine Lösung
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t}{\begin{minipage}{0.2\linewidth}\[\sysalign{r,r}\systeme{x+2y+3z=4,2x+3y+5z=0,x+y+2z=2}\]\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.1\linewidth}\[\rightarrow\]\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.35\linewidth}\[\begin{pNiceArray}{rrr|r}[last-col]
+                \textcolor{loes}{\phantom{-}1} &  \textcolor{loes}{\phantom{-}2} &  \textcolor{loes}{\phantom{-}3} &  \textcolor{loes}{\phantom{-}4}&\\
+                \textcolor{loes}{\phantom{-}2} &  \textcolor{loes}{\phantom{-}3} &  \textcolor{loes}{\phantom{-}5} &  \textcolor{loes}{\phantom{-}0}&\vert  -2\cdot\gaussrow{1}\\
+                \textcolor{loes}{\phantom{-}1} &  \textcolor{loes}{\phantom{-}1} &  \textcolor{loes}{\phantom{-}2} &  \textcolor{loes}{\phantom{-}2}&\vert  -1\cdot\gaussrow{1}
+            \end{pNiceArray}\]\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.35\linewidth}\[\begin{pNiceArray}{rrr|r}[last-col]
+                \textcolor{loes}{\phantom{-}1} &   \textcolor{loes}{2} &  \textcolor{loes}{3} &  \textcolor{loes}{4}&\\
+                \textcolor{loes}{\phantom{-}0} &  \textcolor{loes}{-1} & \textcolor{loes}{-1} & \textcolor{loes}{-8}&\\
+                \textcolor{loes}{\phantom{-}0} &  \textcolor{loes}{-1} & \textcolor{loes}{-1} & \textcolor{loes}{-4}&\vert  -1\cdot\gaussrow{2}
+            \end{pNiceArray}\]\end{minipage}}%
+\end{minipage}
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t}{\begin{minipage}{0.05\linewidth}\[\rightarrow\]\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.25\linewidth}\[\begin{pNiceArray}{rrr|r}[last-col]
+                \textcolor{loes}{\phantom{-}1} &   \textcolor{loes}{2} &  \textcolor{loes}{3} &  \textcolor{loes}{4}&\\
+                \textcolor{loes}{\phantom{-}0} &  \textcolor{loes}{-1} & \textcolor{loes}{-1} & \textcolor{loes}{-8}&\\
+                \textcolor{loes}{\phantom{-}0} &   \textcolor{loes}{0} &  \textcolor{loes}{0} &  \textcolor{loes}{4}&
+            \end{pNiceArray}\]\end{minipage}}%
+    \adjustbox{valign=t, padding=2ex 0ex 0ex 0ex}{\begin{minipage}{0.7\linewidth-2ex}Die letzte Zeile steht ausgeschrieben für \textcolor{loes}{\(0x+0y+0z=-4\text{ \Lightning}\)}
+
+            Da diese Gleichung niemals erfüllt werden kann, egal welche Werte man für \(x,\ y\) und \(z\) einsetzt, hat dieses LGS keine Lösung.\end{minipage}}%
+\end{minipage}
+
+\medskip
+
+\begin{tcolorbox}
+    \textcolor{loestc}{Hat ein LGS keine Lösung, so stehen in der Zeilenstufenform in der letzten Zeile links des Gleichzeichens nur Nullen und rechts eine Zahl ungleich Null.}
+\end{tcolorbox}
+
+\bigskip
+
+Beispiel 2: unendlich viele Lösungen
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t}{\begin{minipage}{0.2\linewidth}\[\sysalign{r,r}\systeme{2x-y+3z=-6,4x+y-2z=0,8x-y+4z=-12}\]\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.05\linewidth}\[\rightarrow\]\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.35\linewidth}\[\begin{pNiceArray}{rrr|r}[last-col]
+                \textcolor{loes}{\phantom{-}2} & \textcolor{loes}{-1} &  \textcolor{loes}{3} &  \textcolor{loes}{-6}&\\
+                \textcolor{loes}{\phantom{-}4} &  \textcolor{loes}{1} & \textcolor{loes}{-2} &   \textcolor{loes}{0}&\vert  -2\cdot\gaussrow{1}\\
+                \textcolor{loes}{\phantom{-}8} & \textcolor{loes}{-1} &  \textcolor{loes}{4} & \textcolor{loes}{-12}&\vert  -4\cdot\gaussrow{1}
+            \end{pNiceArray}\]\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.05\linewidth}\[\rightarrow\]\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.35\linewidth}\[\begin{pNiceArray}{rrr|r}[last-col]
+                \textcolor{loes}{\phantom{-}2} & \textcolor{loes}{-1} &  \textcolor{loes}{3} & \textcolor{loes}{-6}&\\
+                \textcolor{loes}{\phantom{-}0} &  \textcolor{loes}{3} & \textcolor{loes}{-8} & \textcolor{loes}{12}&\\
+                \textcolor{loes}{\phantom{-}0} &  \textcolor{loes}{3} & \textcolor{loes}{-8} & \textcolor{loes}{12}&\vert  -1\cdot\gaussrow{2}
+            \end{pNiceArray}\]\end{minipage}}%
+\end{minipage}
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t}{\begin{minipage}{0.05\linewidth}\[\rightarrow\]\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.25\linewidth}\[\begin{pNiceArray}{rrr|r}[last-col]
+                \textcolor{loes}{\phantom{-}2} & \textcolor{loes}{-1} &  \textcolor{loes}{3} & \textcolor{loes}{-6}&\\
+                \textcolor{loes}{\phantom{-}0} &  \textcolor{loes}{3} & \textcolor{loes}{-8} & \textcolor{loes}{12}&\\
+                \textcolor{loes}{\phantom{-}0} &  \textcolor{loes}{0} &  \textcolor{loes}{0} &  \textcolor{loes}{0}&
+            \end{pNiceArray}\]\end{minipage}}%
+    \adjustbox{valign=t, padding=2ex 0ex 0ex 0ex}{\begin{minipage}{0.7\linewidth-2ex}Die letzte Zeile steht ausgeschrieben für \textcolor{loes}{\(0x+0y+0z=0\)}
+
+            Diese Gleichung ist immer erfüllt, egal welche Werte man für \(x,\ y\) und \(z\) einsetzt. Wir lassen \(z\) als Variable stehen und bestimmen die Lösungen für \(x\) und \(y\) in Abhängigkeit von \(z\):\end{minipage}}%
+\end{minipage}
+
+\medskip
+
+2. Zeile: \(3y-8z=12\ \textcolor{loes}{\vert+8z\ \Rightarrow 3y=8z+12\ \vert:3\ \Rightarrow y=\frac{8}{3}z+4}\)
+
+1. Zeile: \begin{align*}
+    2x-y+3z&=-6\ \textcolor{loes}{\big\vert\ y=\frac{8}{3}z+4}\\
+    \textcolor{loes}{2x-\left(\frac{8}{3}z+4\right)+3z}&\textcolor{loes}{\;=-6}\\
+    \textcolor{loes}{2x+\frac{1}{3}z-4}&\textcolor{loes}{\;=-6\ \big\vert -\frac{1}{3}z+4}\\
+    \textcolor{loes}{2x}&\textcolor{loes}{\;=-\frac{1}{3}z-2\ \big\vert :2}\\
+    \textcolor{loes}{x}&\textcolor{loes}{\;=-\frac{1}{6}z-1}
+\end{align*}
+Das LGS hat also die Lösungen \(x=-\frac{1}{6}z-1\), \(y=\frac{8}{3}z+4\) und \(z=z\), wobei \(z\) eine beliebige Zahl ist. Beispiele möglicher Lösungen wären \(x=0,\ y=-12,\ z=-6\) oder \(x=-3,\ y=36,\ z=12\)
+
+\begin{tcolorbox}
+    \textcolor{loestc}{Hat ein LGS unendlich viele Lösungen, so stehen in der Zeilenstufenform in der letzten Zeile nur Nullen.}
+\end{tcolorbox}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Exercise}[title={\raggedright Prüfe, ob die folgenden LGS keine, eine oder unendliche viele Lösungen haben und gib diese gegebenenfalls an.}, label=LGS_A2]
+
+    \begin{minipage}{\textwidth}
+        \adjustbox{valign=t}{\begin{minipage}{\linewidth/\real{3}}
+                \begin{enumerate}[label=\alph*)]
+                    \setcounter{enumi}{0}
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{3x-2y-3z=-5,-5x+2y+3z=9,-10x+4y+6z=-18}\]\end{minipage}}%
+
+                    \bigskip
+
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{5x-4y-5z=16,3x-y+z=0,-x+2y-z=-6}\]\end{minipage}}%
+
+                    \bigskip
+
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{4x-4y-z=1,2x-3y-z=4,14x-17y-5z=14}\]\end{minipage}}%
+                \end{enumerate}
+        \end{minipage}}%
+        \adjustbox{valign=t}{\begin{minipage}{\linewidth/\real{3}}
+                \begin{enumerate}[label=\alph*)]
+                    \setcounter{enumi}{3}
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{x+2y-5z=7,5x+y-z=11,-3x+3y-9z=3}\]\end{minipage}}%
+
+                    \bigskip
+
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{2x-4y+z=6,4x+4y-z=0,x-y+2z=9}\]\end{minipage}}%
+
+                    \bigskip
+
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{-5x-4y+7z=12,-x-y+2z=2,2x+y-z=6}\]\end{minipage}}%
+                \end{enumerate}
+        \end{minipage}}%
+        \adjustbox{valign=t}{\begin{minipage}{\linewidth/\real{3}}
+                \begin{enumerate}[label=\alph*)]
+                    \setcounter{enumi}{6}
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{-3x+y+z=-15, 5x-3y+3z=23,-4x+y+2z=-20}\]\end{minipage}}%
+
+                    \bigskip
+
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{4x+2y=2,-5x-3y-4z=4,2x-8z=-2}\]\end{minipage}}%
+
+                    \bigskip
+
+                    \item \adjustbox{valign=t}{\begin{minipage}{\linewidth}\[\sysalign{r,r}\systeme{2x-2y-3z=-2,-4x+5y+4z=15,2x-y-5z=9}\]\end{minipage}}%
+                \end{enumerate}
+        \end{minipage}}%
+    \end{minipage}
+\end{Exercise}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Answer}[ref=LGS_A1]
+    \begin{enumerate}[label=\alph*)]
+        \item \(x=-5,\ y=7,\ z=3\)
+        \item \(x=2,\ y=-2,\ z=3\)
+        \item \(x=-1,\ y=5,\ z=1\)
+        \item \(x=6,\ y=3,\ z=-4\)
+        \item \(x=1,\ y=2,\ z=3\)
+        \item \(x=-2,\ y=6,\ z=-3\)
+    \end{enumerate}
+\end{Answer}
+
+\begin{Answer}[ref=LGS_A2]
+    \begin{enumerate}[label=\alph*)]
+        \item keine Lösung%a
+        \item genau eine Lösung: \(x=-1,\ y=-4,\ z=-1\)%b
+        \item unendlich viele Lösungen: \(x=-\frac{z}{4}-\frac{13}{4},\ y=-\frac{z}{2}-\frac{7}{2},\ z=z\)%c
+
+        \item unendlich viele Lösungen: \(x=-\frac{z}{3}-\frac{5}{3},\ y=\frac{8z}{3}+\frac{8}{3},\ z=z\)%d
+        \item genau eine Lösung: \(x=1,\ y=0,\ z=4\)%e
+        \item keine Lösung%f
+
+        \item genau eine Lösung: \(x=4,\ y=-2,\ z=-1\)%g
+        \item keine Lösung%h
+        \item unendlich viele Lösungen: \(x=\frac{7z}{2}+10,\ y=2z+11,\ z=z\)%i
+    \end{enumerate}
+\end{Answer}

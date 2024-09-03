@@ -1,0 +1,87 @@
+% !TeX root = ../../Skript.tex
+\cohead{\Large\textbf{Abl. von e-Fkt.}}
+\fakesubsection{Ableitung von e-Funktionen}
+Die Faktor- und Summenregel gelten analog auch für e-Funktionen. Funktionen vom Typ\linebreak \(f(x)=ae^{kx}\) lassen sich wie folgt ableiten:
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+    \begin{minipage}{0.3\textwidth}
+        \begin{align*}
+            f(x)&=a\cdot e^{kx}\\
+            f'(x)&=\textcolor{loes}{a\cdot k\cdot e^{kx}}
+        \end{align*}
+    \end{minipage}%
+    \begin{minipage}{0.7\textwidth}
+        \begin{tcolorbox}
+	       \textbf{Ableitung von e-Funktionen:}
+
+            \textcolor{loestc}{Eine Funktion vom Typ \(f(x)=ae^{kx}\) hat die Ableitung \(f'(x)=ake^{kx}\).}
+
+            \textcolor{loestc}{Es wird also nur der Faktor \(k\) nach unten geholt, alles andere bleibt gleich.}
+        \end{tcolorbox}
+    \end{minipage}%
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{Exercise}[title={\raggedright Berechne jeweils allgemein die Ableitung \(f'(x)\)}, label=efktAblA1]
+
+		\begin{minipage}{\textwidth}
+			\begin{minipage}{0.5\textwidth}
+				\begin{enumerate}[label=\alph*)]
+					\item \(f_1(x)=e^x\)
+					\item \(f_2(x)=-e^{-x}+e^x\)
+					\item \(f_3(x)=e^{-x}+2\)
+					\item \(f_4(x)=3e^{0,5x}+2e^x\)
+					\item \(f_5(x)=-4e^{\frac{3}{5}x}+2e^{\frac{1}{4}x}\)
+					\item \(f_6(x)=e^{-\frac{7}{8}x}+2e^{-\frac{1}{2}x}\)
+					\item \(f_7(x)=-e^{3x}-2e^{x}+5\)
+					\item \(f_8(x)=0,5e^{4x}-2e^{2x}+e^x\)
+				\end{enumerate}
+			\end{minipage}%
+			\begin{minipage}{0.5\textwidth}
+				\begin{enumerate}[label=\alph*)]
+					\setcounter{enumi}{8}
+					\item \(f_9(x)=3e^{-2x}-e^{-x}\)
+					\item \(f_{10}(x)=\frac{1}{4}e^{\frac{2}{5}x}+4x\)
+					\item \(f_{11}(x)=-3e^{-\frac{7}{6}x}+2e^{0,5x}\)
+					\item \(f_{12}(x)=5e^{\frac{3}{8}x}+\frac{7}{3}e^{0,25x}\)
+					\item \(f_{13}(x)=10e^{-\frac{17}{3}x}+5e^{-5x}\)
+					\item \(f_{14}(x)=-\frac{3}{2}e^{-\frac{7}{6}x}+e^{-x}\)
+					\item \(f_{15}(x)=3e^x-4e\)
+					\item \(f_{16}(x)=3e^x-e^{3x}\)
+				\end{enumerate}
+			\end{minipage}%
+		\end{minipage}
+	\end{Exercise}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Answer}[ref=efktAblA1]
+
+	\begin{minipage}{\textwidth}
+		\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\item \(f_1'(x)=e^x\)
+				\item \(f_2'(x)=e^{-x}+e^x\)
+				\item \(f_3'(x)=-e^{-x}\)
+				\item \(f_4'(x)=1,5e^{0,5x}+2e^x\)
+				\item \(f_5'(x)=-\frac{12}{5}e^{\frac{3}{5}x}+\frac{1}{2}e^{\frac{1}{4}x}\)
+				\item \(f_6'(x)=-\frac{7}{8}e^{-\frac{7}{8}x}-e^{-\frac{1}{2}x}\)
+				\item \(f_7'(x)=-3e^{3x}-2e^{x}\)
+				\item \(f_8'(x)=2e^{4x}-4e^{2x}+e^x\)
+			\end{enumerate}
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\setcounter{enumi}{8}
+				\item \(f_9'(x)=-6e^{-2x}+e^{-x}\)
+				\item \(f_{10}'(x)=\frac{1}{10}e^{\frac{2}{5}x}+4\)
+				\item \(f_{11}'(x)=\frac{7}{2}e^{-\frac{7}{6}x}+e^{0,5x}\)
+				\item \(f_{12}'(x)=\frac{15}{8}e^{\frac{3}{8}x}+\frac{7}{12}e^{0,25x}\)
+				\item \(f_{13}'(x)=-\frac{170}{3}e^{-\frac{17}{3}x}-25e^{-5x}\)
+				\item \(f_{14}'(x)=\frac{7}{4}e^{-\frac{7}{6}x}-e^{-x}\)
+				\item \(f_{15}'(x)=3e^x\) (\(e\) ohne \(x\) fällt weg)
+				\item \(f_{16}'(x)=3e^x-3e^{3x}\)
+			\end{enumerate}
+		\end{minipage}%
+	\end{minipage}
+\end{Answer}

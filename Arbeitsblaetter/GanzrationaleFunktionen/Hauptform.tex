@@ -1,0 +1,153 @@
+% !TeX root = ../../Skript.tex
+\cohead{\Large\textbf{Hauptform ganzrat. Funktionen}}
+\fakesubsection{Hauptform ganzrat. Funktionen}
+Funktionen, deren Funktionsgleichung man wie folgt darstellen kann, bezeichnet man als ganzrationale Funktionen:
+
+\(f(x)=a_nx^n+a_{n-1}x^{n-1}+a_{n-2}x^{n-2}+\dots +a_2x^2+a_1x+a_0, \quad a_n\neq 0, \quad n\in\N\)
+
+Diese Darstellungsform (komplett ausmultipliziert und zusammengefasst) bezeichnet man als Hauptform oder Normalform.
+
+Folgende Begriffe finden für die ganzrationalen Funktionen Verwendung:
+\begin{itemize}\large
+	\item[\textcolor{loes}{\textbullet}] \textcolor{loes}{\(n\): Grad der Funktion (größte Hochzahl)}
+	\item[\textcolor{loes}{\textbullet}]  \textcolor{loes}{\(a_n,\ a_{n-1},\ a_{n-2}, \dots,\ a_2,\ a_1,\ a_0\): Koeffizienten}
+	\item[\textcolor{loes}{\textbullet}]  \textcolor{loes}{\(a_n\): Leitkoeffizient (Koeffizient, der vor dem \(x\) mit der größten Hochzahl steht)}
+	\item[\textcolor{loes}{\textbullet}]  \textcolor{loes}{\(a_0\): Absolutglied (immer der Koeffizient, der ohne \(x\) alleine steht)}
+\end{itemize}\vspace{2cm}
+Beispiele:
+
+\medskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}\raggedright
+		\(f(x)=-4x^5+3x^4-\frac{1}{2}x^3+x-3\)
+
+		Grad: \(5\)
+
+		Koeffizienten: \(a_5=-4\), \(a_4=3\), \(a_3=-\frac{1}{2}\),
+
+		\(a_2=0\), \(a_1=1\), \(a_0=-3\)
+
+		Leitkoeffizient \(a_5=-4\)
+
+		Absolutglied \(a_0=-3\)
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}\raggedright
+		\(g(x)=x^4+2x^3-0,5x\)
+
+		Grad: \textcolor{loes}{\(4\)}
+
+		Koeffizienten: \textcolor{loes}{\(a_4=1\), \(a_3=2\), \(a_2=0\),}
+
+		\textcolor{loes}{\(a_1=-0,5\), \(a_0=0\)}
+
+		Leitkoeffizient \textcolor{loes}{\(a_4=1\)}
+
+		Absolutglied \textcolor{loes}{\(a_0=0\)}
+	\end{minipage}}%
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Exercise}[title={Gib den Grad, die Koeffizienten, den Leitkoeffizienten sowie das Absolutglied an.}, label=ganzHauptA1]
+
+	\begin{minipage}{\textwidth}
+		\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\item \(f(x)=-6x^3+2x-3\)
+				\item \(g(x)=0,5x^5-7x^4+2,5x\)
+				\item \(h(x)=2x^6\)
+				\item \(i(x)=-\frac{3}{2}x^5-8x^4+x^2-1\)
+			\end{enumerate}
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\setcounter{enumi}{4}
+				\item \(j(x)=0,1x^4-12x^3-x^2+8,6x-3,1\)
+				\item \(k(x)=-\frac{3}{5}x^7+\frac{2}{7}x^6-\frac{11}{6}x^4-\frac{12}{5}x\)
+				\item \(l(x)=2x\left(x^3-2x^2+5\right)\)
+				\item \(m(x)=-3x^2\left(x+2\right)^2\)
+			\end{enumerate}
+		\end{minipage}%
+	\end{minipage}%
+\end{Exercise}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Answer}[ref=ganzHauptA1]
+
+	\begin{minipage}{\textwidth}
+		\begin{minipage}[t]{0.49\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\item Grad: \(3\)
+
+				Koeffizienten: \(a_3=-6\), \(a_2=0\), \(a_1=2\), \(a_0=-3\)
+
+				Leitkoeffizient \(a_3=-6\)
+
+				Absolutglied \(a_0=-3\)
+				\item Grad: \(5\)
+
+				Koeffizienten: \(a_5=0,5\), \(a_4=-7\), \(a_3=0\), \(a_2=0\), \(a_1=2,5\), \(a_0=0\)
+
+				Leitkoeffizient \(a_5=0,5\)
+
+				Absolutglied \(a_0=0\)
+				\item
+				Grad: \(6\)
+
+				Koeffizienten: \(a_6=2\), \(a_5=0\), \(a_4=0\), \(a_3=0\), \(a_2=0\), \(a_1=0\), \(a_0=0\)
+
+				Leitkoeffizient \(a_6=2\)
+
+				Absolutglied \(a_0=0\)
+				\item Grad: \(5\)
+
+				Koeffizienten: \(a_5=-\frac{3}{2}\), \(a_4=-8\), \(a_3=0\), \(a_2=1\), \(a_1=0\), \(a_0=-1\)
+
+				Leitkoeffizient \(a_5=-\frac{3}{2}\)
+
+				Absolutglied \(a_0=-1\)
+			\end{enumerate}
+		\end{minipage}%
+		\begin{minipage}[t]{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\setcounter{enumi}{4}
+				\item Grad: \(4\)
+
+				Koeffizienten: \(a_4=0,1\), \(a_3=-12\),
+
+				\(a_2=-1\), \(a_1=8,6\), \(a_0=-3,1\)
+
+				Leitkoeffizient \(a_4=0,1\)
+
+				Absolutglied \(a_0=-3,1\)
+				\item Grad: \(7\)
+
+				Koeffizienten: \(a_7=-\frac{3}{5}\), \(a_6=\frac{2}{7}\), \(a_5=0\), \(a_4=-\frac{11}{6}\), \(a_3=0\), \(a_2=0\), \(a_1=-\frac{12}{5}\), \(a_0=0\)
+
+				Leitkoeffizient \(a_7=-\frac{3}{5}\)
+
+				Absolutglied \(a_0=0\)
+				\item \(l(x)=2x\left(x^3-2x^2+5\right)=2x^4-4x^3+10x\)
+
+				Grad: \(4\)
+
+				Koeffizienten: \(a_4=2\), \(a_3=-4\), \(a_2=0\), \(a_1=10\), \(a_0=0\)
+
+				Leitkoeffizient \(a_4=2\)
+
+				Absolutglied \(a_0=0\)
+				\item \(m(x)=-3x^2\left(x+2\right)^2\)
+
+				\(\hphantom{m(x)}=-3x^4-12x^3-12x^2\)
+
+				Grad: \(4\)\\
+				Koeffizienten: \(a_4=-3\), \(a_3=-12\), \(a_2=-12\),
+
+				\(a_1=0\), \(a_0=0\)
+
+				Leitkoeffizient \(a_4=-3\)
+
+				Absolutglied \(a_0=0\)
+			\end{enumerate}
+		\end{minipage}%
+	\end{minipage}%
+\end{Answer}

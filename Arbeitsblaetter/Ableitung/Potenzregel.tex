@@ -1,0 +1,106 @@
+% !TeX root = ../../Skript.tex
+\cohead{\Large\textbf{Potenzregel}}
+\fakesubsection{Potenzregel}
+Auch mit Hilfe der Faktorregel müssen wir die Ableitung von Funktionen wie \(x^2,\ x^3,\ x^4,\dots\) mit Hilfe des Differentialquotienten bestimmen. Glücklicherweise können wir die Ableitung dieser Funktionen sehr einfach mit Hilfe der Potenzregel berechnen. Dazu bestimmen wir die Ableitung einer Funktion \(f(x)=x^n\):
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{0.5\textwidth}
+		\begin{align*}
+			f(x)&=x^n\\
+			f'(x)&=\textcolor{loes}{\lim\limits_{h\to 0}\frac{f(x+h)-f(x)}{h}}\\
+			&\textcolor{loes}{\;=\lim\limits_{h\to 0}\frac{(x+h)^n-x^n}{h}}\\
+			&\textcolor{loes}{\;=\lim\limits_{h\to 0}\frac{x^n+nx^{n-1}h+\mathcal{O}(h^2)-x^n}{h}}\\
+			&\textcolor{loes}{\;=\lim\limits_{h\to 0}\frac{nx^{n-1}h+\mathcal{O}(h^2)}{h}}\\
+			&\textcolor{loes}{\;=\lim\limits_{h\to 0}nx^{n-1}+\mathcal{O}(h)}\\
+			&\textcolor{loes}{\;=nx^{n-1}}
+		\end{align*}
+	\end{minipage}%
+	\begin{minipage}{0.5\textwidth}
+		\textcolor{loes}{Der Ausdruck \(\mathcal{O}(h^2)\) steht für eine Summe, bei der jeder Summand mindestens ein \(h^2\) beinhaltet. Der interessierte Leser sei an die Binomialkoeffizienten verwiesen. Kürzt man diese Summe mit \(h\), so bleibt eine Summe übrig, die in jedem Summanden mindestens ein \(h\) hat: \(\mathcal{O}(h)\). Diese Summe wird 0, wenn man \(h\) gegen 0 gehen lässt.}
+	\end{minipage}%
+\end{minipage}
+Wir haben also eine Regel gefunden um alle Funktionen vom Typ \(f(x)=x^n\) abzuleiten. Verbunden mit der Faktorregel ergibt sich:
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{0.3\textwidth}
+		\begin{align*}
+			f(x)&=ax^n\\
+			f'(x)&=\textcolor{loes}{anx^{n-1}}
+		\end{align*}
+	\end{minipage}%
+	\begin{minipage}{0.7\textwidth}
+		\begin{tcolorbox}
+			\textbf{Potenzregel:}
+
+			\textcolor{loestc}{Eine Potenzfunktion vom Typ \(f(x)=ax^n\) leitet man ab, indem man die Funktion mit der Hochzahl \(n\) multipliziert und dann die Hochzahl um 1 verringert: \(f'(x)=anx^{n-1}\)}
+
+            \bigskip
+
+		\end{tcolorbox}
+	\end{minipage}%
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Exercise}[title={\raggedright Berechne jeweils allgemein die Ableitung \(f'(x)\)}, label=potenzregelA1]
+
+		\begin{minipage}{\textwidth}
+			\begin{minipage}{0.5\textwidth}
+				\begin{enumerate}[label=\alph*)]
+					\item \(f_1(x)=x^3\)
+					\item \(f_2(x)=x^4\)
+					\item \(f_3(x)=x^5\)
+					\item \(f_4(x)=-2x^3\)
+					\item \(f_5(x)=5x^4\)
+					\item \(f_6(x)=\frac{2}{3}x^6\)
+					\item \(f_7(x)=\frac{1}{2}x^4\)
+					\item \(f_8(x)=4x\)
+				\end{enumerate}
+			\end{minipage}%
+			\begin{minipage}{0.5\textwidth}
+				\begin{enumerate}[label=\alph*)]
+					\setcounter{enumi}{8}
+					\item \(f_9(x)=0.5x^6\)
+					\item \(f_{10}(x)=\frac{2}{3}x^9\)
+					\item \(f_{11}(x)=\frac{3}{8}x^4\)
+					\item \(f_{12}(x)=-3x^{11}\)
+					\item \(f_{13}(x)=\frac{x^3}{6}\)
+					\item \(f_{14}(x)=x^5\cdot 7\)
+					\item \(f_{15}(x)=-0,2x^8\)
+					\item \(f_{16}(x)=\frac{5}{99}x^{99}\)
+				\end{enumerate}
+			\end{minipage}%
+		\end{minipage}
+\end{Exercise}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Answer}[ref=potenzregelA1]\\
+	\begin{minipage}{\textwidth}
+		\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\item \(f_1'(x)=3x^2\)
+				\item \(f_2'(x)=4x^3\)
+				\item \(f_3'(x)=5x^4\)
+				\item \(f_4'(x)=-6x^2\)
+				\item \(f_5'(x)=20x^3\)
+				\item \(f_6'(x)=4x^5\)
+				\item \(f_7'(x)=2x^3\)
+				\item \(f_8'(x)=4\)
+			\end{enumerate}
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\setcounter{enumi}{8}
+				\item \(f_9'(x)=3x^5\)
+				\item \(f_{10}'(x)=6x^8\)
+				\item \(f_{11}'(x)=\frac{3}{2}x^3\)
+				\item \(f_{12}'(x)=-33x^{10}\)
+				\item \(f_{13}'(x)=\frac{1}{2}x^2\)
+				\item \(f_{14}'(x)=35x^4\)
+				\item \(f_{15}'(x)=-1,6x^7\)
+				\item \(f_{16}'(x)=5x^{98}\)
+			\end{enumerate}
+		\end{minipage}%
+	\end{minipage}
+\end{Answer}

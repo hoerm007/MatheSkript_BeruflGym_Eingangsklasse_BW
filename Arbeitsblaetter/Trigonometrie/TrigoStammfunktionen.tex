@@ -1,0 +1,106 @@
+% !TeX root = ../../Skript.tex
+\cohead{\Large\textbf{Stammfunktionen trig. Funktionen}}
+\fakesubsection{Stammfunktionen trigonometrischer Funktionen}
+\begin{tcolorbox}
+	\textbf{Regeln zum Bilden der Stammfunktion für Sinus und Cosinus}
+		\begin{align*}
+			f(x)&=a\cdot\sinn{bx}&g(x)&=a\cdot\coss{bx}\\
+			\textcolor{loestc}{F(x)}&\textcolor{loestc}{\;=-\frac{a}{b}\cdot\coss{bx}}&\textcolor{loestc}{G(x)}&\textcolor{loestc}{\;=\frac{a}{b}\cdot\sinn{bx}}
+		\end{align*}
+
+        \bigskip
+
+\end{tcolorbox}
+Beispiele:
+\begin{align*}
+	f_1(x)&=2\cdot\sinn{3x}&g_1(x)&=4\cdot\coss{0,5x}\\
+	F_1(x)&=\textcolor{loes}{-\frac{2}{3}\cdot\coss{3x}}&G_1(x)&=\textcolor{loes}{8\cdot\sinn{0,5x}}\\
+	f_2(x)&=-\frac{1}{2}\cdot\sinn{\pi x}&g_2(x)&=-\coss{x}\\
+	F_2(x)&=\textcolor{loes}{\frac{1}{2\pi}\cdot\coss{\pi x}}&G_2(x)&=\textcolor{loes}{-\sinn{x}}
+\end{align*}
+
+
+\begin{Exercise}[title={\raggedright\normalfont Bestimme jeweils eine Stammfunktion}, label=trigStammfunktionA1]
+
+	\begin{minipage}{\textwidth}
+		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+				\begin{enumerate}[label=\alph*)]
+					\item \(f_1(x)=-3\sinn{2x}\)
+					\item \(f_2(x)=4\pi\sinn{2\pi x}\)
+					\item \(f_3(x)=\coss{0,5x}\)
+					\item \(f_4(x)=-2\coss{\frac{\pi}{2}x}\)
+					\item \(f_5(x)=4\pi\sinn{3\pi x}\)
+					\item \(f_6(x)=0,5\coss{5x}+2\)
+					\item \(f_7(x)=-4\sinn{\frac{2}{3}x}\)
+					\item \(f_8(x)=\coss{\frac{5}{4}x}-3\)
+					\item \(f_9(x)=5\sinn{3\pi x}\)
+					\item \(f_{10}(x)=\frac{3}{4}\sinn{\frac{3\pi}{2}x}\)
+					\item \(f_{11}(x)=\frac{1}{3}\coss{2x}\)
+					\item \(f_{12}(x)=-\sinn{6\pi x}+1,6\)
+					\item \(f_{13}(x)=0,5\coss{\frac{\pi}{6}x}\)
+				\end{enumerate}
+		\end{minipage}}%
+		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+				\begin{enumerate}[label=\alph*)]
+					\setcounter{enumi}{13}
+					\item \(f_{14}(x)=-3\coss{0,2x}+2\)
+					\item \(f_{15}(x)=-\frac{1}{7}\coss{\pi x}-\frac{1}{5}\)
+					\item \(f_{16}(x)=-6\sinn{\frac{1}{\pi}x}-3\)
+					\item \(f_{17}(x)=2\sinn{2,5x}-4\)
+					\item \(f_{18}(x)=4\coss{8x}\)
+					\item \(f_{19}(x)=-3\coss{\frac{5\pi}{8}x}-\frac{1}{4}\)
+					\item \(f_{20}(x)=-4\sinn{3x}+6\)
+					\item \(f_{21}(x)=4\coss{\frac{3\pi}{4}x}-12\)
+					\item \(f_{22}(x)=2\sinn{6x}+2\)
+					\item \(f_{23}(x)=-\frac{3}{4}\coss{\frac{3}{8}x}+\frac{1}{8}\)
+					\item \(f_{24}(x)=-\frac{10}{11}\sinn{5\pi x}-\frac{5}{2}\)
+					\item \(f_{25}(x)=\frac{15}{7}\sinn{\frac{5\pi}{3}x}+\frac{8}{3}\)
+					\item \(f_{26}(x)=-\frac{9}{4}\coss{\frac{1}{3}x}-1\)
+				\end{enumerate}
+		\end{minipage}}%
+	\end{minipage}
+\end{Exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Answer}[ref=trigStammfunktionA1]
+
+	Für alle Stammfunktionen wurde die Integrationskonstante Null gewählt (\(c=0\)).
+
+	\begin{minipage}{\textwidth}
+		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+				\begin{enumerate}[label=\alph*)]
+					\item \(F_1(x)=\frac{3}{2}\coss{2x}\)
+					\item \(F_2(x)=-2\coss{2\pi x}\)
+					\item \(F_3(x)=2\sinn{0,5x}\)
+					\item \(F_4(x)=-\frac{4}{\pi}\sinn{\frac{\pi}{2}x}\)
+					\item \(F_5(x)=-\frac{4}{3}\coss{3\pi x}\)
+					\item \(F_6(x)=0,1\sinn{5x}+2x\)
+					\item \(F_7(x)=6\coss{\frac{2}{3}x}\)
+					\item \(F_8(x)=\frac{4}{5}\sinn{\frac{5}{4}x}-3x\)
+					\item \(F_9(x)=-\frac{5}{3\pi}\coss{3\pi x}\)
+					\item \(F_{10}(x)=-\frac{1}{2\pi}\coss{\frac{3\pi}{2}x}\)
+					\item \(F_{11}(x)=\frac{1}{6}\sinn{2x}\)
+					\item \(F_{12}(x)=\frac{1}{6\pi}\coss{6\pi x}+1,6x\)
+					\item \(F_{13}(x)=\frac{3}{\pi}\sinn{\frac{\pi}{6}x}\)
+				\end{enumerate}
+		\end{minipage}}%
+		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+				\begin{enumerate}[label=\alph*)]
+					\setcounter{enumi}{13}
+					\item \(F_{14}(x)=-15\sinn{0,2x}+2x\)
+					\item \(F_{15}(x)=-\frac{1}{7\pi}\sinn{\pi x}-\frac{1}{5}x\)
+					\item \(F_{16}(x)=6\pi\coss{\frac{1}{\pi}x}-3x\)
+					\item \(F_{17}(x)=-\frac{4}{5}\coss{2,5x}-4x\)
+					\item \(F_{18}(x)=0,5\sinn{8x}\)
+					\item \(F_{19}(x)=-\frac{24}{5\pi}\coss{\frac{5\pi}{8}x}-\frac{1}{4}x\)
+					\item \(F_{20}(x)=\frac{4}{3}\coss{3x}+6x\)
+					\item \(F_{21}(x)=\frac{16}{3\pi}\sinn{\frac{3\pi}{4}x}-12x\)
+					\item \(F_{22}(x)=-\frac{1}{3}\coss{6x}+2x\)
+					\item \(F_{23}(x)=-2\coss{\frac{3}{8}x}+\frac{1}{8}x\)
+					\item \(F_{24}(x)=\frac{2}{11\pi}\coss{5\pi x}-\frac{5}{2}x\)
+					\item \(F_{25}(x)=-\frac{9}{7\pi}\coss{\frac{5\pi}{3}x}+\frac{8}{3}x\)
+					\item \(F_{26}(x)=-\frac{27}{4}\sinn{\frac{1}{3}x}-x\)
+				\end{enumerate}
+		\end{minipage}}%
+	\end{minipage}
+\end{Answer}

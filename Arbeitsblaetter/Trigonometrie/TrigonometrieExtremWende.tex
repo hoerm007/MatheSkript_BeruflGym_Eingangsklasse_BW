@@ -1,0 +1,211 @@
+% !TeX root = ../../Skript.tex
+\cohead{\Large\textbf{Extrem- und Wendepunkte}}
+\fakesubsection{Extrem- und Wendepunkte der trigonometrischen Funktionen}
+Das Standardverfahren zum Bestimmen von Extrem- und Wendepunkten über das Bestimmen der Nullstellen der ersten und zweiten Ableitung (mit Vorzeichenwechsel) kann auch bei trigonometrischen Funktionen der Form \(a\sin(bx)+d\) oder \(a\cos(bx)+d\) angewendet werden. Dazu macht man sich folgende Eigenschaften zu Nutze:
+\begin{enumerate}
+	\item Abstand auf der \(x\)-Achse:
+
+    \textcolor{loes}{Die Hoch-, Tief- und Wendepunkte wechseln sich auf der \(x\)-Achse im Abstand einer Viertel Periode ab.}
+	\item \(y\)-Werte:
+
+    \textcolor{loes}{Der \(y\)-Wert der Wendepunkte ist gleich dem Mittelwert \(d\).\\Die \(y\)-Werte der Hoch- und Tiefpunkte liegen bei \(d\pm a\).}
+\end{enumerate}
+Mit Hilfe einer Skizze lassen sich so die Extrem- und Wendepunkte leicht bestimmen. Bsp. 1: Bestimme die Extrem- und Wendepunkte der Funktion \(f(x)=3\sin(\pi x)+1\).
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t, padding = 0ex 0ex 3ex 0ex}{\begin{minipage}{0.5\textwidth-3ex}
+			\includegraphics[width=\textwidth]{\trigonometrie/pics/Extrempunkte1\iftoggle{ausfuellen}{}{_empty}.png}
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+			\textcolor{loes}{Mittelwert \(d=1\)}
+
+            \textcolor{loes}{Periode \(p=\frac{2\pi}{b}=2\)}
+
+            \textcolor{loes}{Amplitude \(a=3\)}
+
+            \textcolor{loes}{Der erste Wendepunkt liegt bei \(x_0=0\) und die Wendepunkte wiederholen sich im Abstand der halben Periode:}
+
+            \textcolor{loes}{Wendepunkte: \(W_k\left(k\vert 1\right),\ k\in\Z\)}
+
+        	\textcolor{loes}{Der erste Hochpunkt folgt auf den ersten Wendepunkt im Abstand von \(\frac{p}{4}=\frac{1}{2}\). Hochpunkte wiederholen sich im Abstand einer vollen Periode:}
+
+            \textcolor{loes}{Hochpunkte \(H_k\left(\frac{1}{2}+2k\vert 4\right)\)}
+	\end{minipage}}%
+\end{minipage}
+\textcolor{loes}{Der erste Tiefpunkt folgt auf den ersten Hochpunkt im Abstand einer halben Periode, also bei \(x=\frac{1}{2}+1=\frac{3}{2}\):
+	Tiefpunkte \(T_k\left(\frac{3}{2}\vert -2\right)\)}
+
+\bigskip
+
+Bsp. 2: Bestimme die Extrem- und Wendepunkte der Funktion \(f(x)=-\cos(0,5 x)-2\).
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+			\textcolor{loes}{Mittelwert \(d=-2\)}
+
+            \textcolor{loes}{Periode \(p=\frac{2\pi}{b}=4\pi\)}
+
+            \textcolor{loes}{Amplitude \(a=1\)}
+
+            \textcolor{loes}{Da \(a\) negativ ist, liegt der erste Tiefpunkt bei \(x_0=0\):}
+
+            \textcolor{loes}{Tiefpunkte: \(T_k\left(4\pi k\vert -3\right),\ k\in\Z\)}
+
+            \textcolor{loes}{Der erste Wendepunkt folgt auf den Tiefpunkt im Abstand von \(\frac{p}{4}=\pi\):}
+
+            \textcolor{loes}{Wendepunkte \(W_k\left(\pi+2\pi k\vert -2\right)\)}
+
+            \textcolor{loes}{Der Hochpunkt folgt wiederum im Abstand von \(\pi\) auf den Wendepunkt, der bei \(x=\pi\) liegt:}
+
+            \textcolor{loes}{Hochpunkte: \(H_k\left(2\pi+4\pi k\vert -1\right)\)
+			}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding = 3ex 0ex 0ex 0ex}{\begin{minipage}{0.5\textwidth-3ex}
+			\includegraphics[width=\textwidth]{\trigonometrie/pics/Extrempunkte2\iftoggle{ausfuellen}{}{_empty}.png}
+	\end{minipage}}%
+\end{minipage}
+\newpage
+\begin{Exercise}[title={\raggedright\normalfont Bestimme jeweils alle Hoch-, Tief- und Wendepunkte:}, label=sincosExtremWendeA1]
+	\begin{enumerate}[label=\alph*)]
+		\item \(f(x)=-3\sinn{2x}+\frac{3}{2}\)
+		\item \(f(x)=4\sinn{2\pi x}-1\)
+		\item \(f(x)=\coss{0,5x}\)
+		\item \(f(x)=-\coss{\frac{\pi}{2}x}-1\)
+		\item \(f(x)=4\sinn{3\pi x}+2\)
+		\item \(f(x)=0,5\coss{5x}+3\)
+		\item \(f(x)=-5\sinn{\frac{2}{3}x}-3\)
+		\item \(f(x)=-1,5\coss{\frac{5}{4}x}-2,5\)
+		\item \(f(x)=5\sinn{\pi x}\)
+		\item \(f(x)=4\sinn{\frac{3\pi}{2}x}-1\)
+		\item \(f(x)=\frac{1}{3}\coss{2x}-\frac{1}{8}\)
+		\item \(f(x)=-0,4\sinn{6\pi x}+1,6\)
+		\item \(f(x)=0,5\coss{\frac{\pi}{6}x}+0,6\)
+		\item \(f(x)=-3\coss{0,2x}+2\)
+		\item \(f(x)=\frac{1}{7}\coss{\pi x}-\frac{1}{5}\)
+		\item \(f(x)=-6\sinn{\frac{1}{\pi}x}-3\)
+		\item \(f(x)=2\sinn{2,5x}-4\)
+		\item \(f(x)=4\coss{8x}+\sqrt{2}\)
+		\item \(f(x)=-3\coss{\frac{5\pi}{8}x}-\frac{1}{4}\)
+		\item \(f(x)=-4\sinn{3x}+6\)
+		\item \(f(x)=4\coss{\frac{3\pi}{4}x}-12\)
+		\item \(f(x)=2\sinn{6x}+2\)
+		\item \(f(x)=-\frac{3}{4}\coss{\frac{3}{8}x}+\frac{1}{8}\)
+		\item \(f(x)=-\frac{25}{13}\sinn{5\pi x}-\frac{5}{2}\)
+		\item \(f(x)=\frac{5}{3}\sinn{\frac{5\pi}{3}x}+\frac{8}{3}\)
+		\item \(f(x)=-\frac{9}{4}\coss{\frac{1}{3}x}-1\)
+	\end{enumerate}
+\end{Exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Answer}[ref=sincosExtremWendeA1]
+	\begin{enumerate}[label=\alph*)]
+		%a
+		\item Hochpunkte: \(H_k\left(\frac{3\pi}{4}+\pi k \middle\vert\frac{9}{2} \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{\pi}{4}+\pi k \middle\vert-\frac{3}{2} \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{\pi}{2}k \middle\vert\frac{3}{2} \right)\)
+		%b
+		\item Hochpunkte: \(H_k\left(\frac{1}{4}+k \middle\vert 3 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{3}{4}+k \middle\vert -5 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{k}{2} \middle\vert-1 \right)\)
+		%c
+		\item Hochpunkte: \(H_k\left(4\pi k \middle\vert1 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(2\pi+4\pi k \middle\vert-1 \right)\)\\
+		Wendepunkte: \(W_k\left(\pi+2\pi k \middle\vert0 \right)\)
+		%d
+		\item Hochpunkte: \(H_k\left(3+4k \middle\vert 0\right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(4k \middle\vert-2 \right)\)\\
+		Wendepunkte: \(W_k\left(1+2k \middle\vert-1 \right)\)
+		%e
+		\item Hochpunkte: \(H_k\left(\frac{1}{6}+\frac{2}{3}k \middle\vert6 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{1}{2}+\frac{2}{3}k \middle\vert-2 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{k}{3} \middle\vert2 \right)\)
+		%f
+		\item Hochpunkte: \(H_k\left(\frac{2}{5}\pi k \middle\vert3,5 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{1}{5}\pi+\frac{2}{5}\pi k \middle\vert2,5 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{\pi}{10}+\frac{\pi}{5}k \middle\vert3 \right)\)
+		%g
+		\item Hochpunkte: \(H_k\left(\frac{9}{4}\pi+3\pi k \middle\vert 2\right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{3}{4}\pi+3\pi k \middle\vert -8\right)\)\\
+		Wendepunkte: \(W_k\left(\frac{3}{2}\pi k \middle\vert-3 \right)\)
+		%h
+		\item Hochpunkte: \(H_k\left(\frac{4}{5}\pi+\frac{8}{5}\pi k \middle\vert-1 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{8}{5}\pi k \middle\vert-4 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{2}{5}\pi+\frac{4}{5}\pi k \middle\vert-2,5 \right)\)
+		%i
+		\item Hochpunkte: \(H_k\left(0,5+2k \middle\vert5 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(1,5+2k \middle\vert-5 \right)\)\\
+		Wendepunkte: \(W_k\left(k \middle\vert0 \right)\)
+		%j
+		\item Hochpunkte: \(H_k\left(\frac{1}{3}+\frac{4}{3}k \middle\vert 3\right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(1+\frac{4}{3}k \middle\vert -5\right)\)\\
+		Wendepunkte: \(W_k\left(\frac{2}{3}k \middle\vert -1\right)\)
+		%k
+		\item Hochpunkte: \(H_k\left(\pi k \middle\vert\frac{5}{24} \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{\pi}{2}+\pi k \middle\vert-\frac{11}{24} \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{\pi}{4}+\frac{\pi}{2}k \middle\vert-\frac{1}{8} \right)\)
+		%l
+		\item Hochpunkte: \(H_k\left(\frac{1}{12}+\frac{1}{3}k \middle\vert2 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{1}{4}+\frac{1}{3}k \middle\vert1,2 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{1}{6}k \middle\vert1,6 \right)\)
+		%m
+		\item Hochpunkte: \(H_k\left(12k \middle\vert1,1 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(6+12k \middle\vert0,1 \right)\)\\
+		Wendepunkte: \(W_k\left(3+6k \middle\vert0,6 \right)\)
+		%n
+		\item Hochpunkte: \(H_k\left(5\pi+10\pi k \middle\vert5 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(10\pi k \middle\vert-1 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{5}{2}\pi+5\pi k \middle\vert2 \right)\)
+		%o
+		\item Hochpunkte: \(H_k\left(2k \middle\vert-\frac{2}{35} \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(1+2k \middle\vert-\frac{12}{35} \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{1}{2}+k \middle\vert-\frac{1}{5} \right)\)
+		%p
+		\item Hochpunkte: \(H_k\left(\frac{3\pi^2}{2}+2\pi^2 k \middle\vert3 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{\pi^2}{2}+2\pi^2 k \middle\vert-9 \right)\)\\
+		Wendepunkte: \(W_k\left(\pi^2 k \middle\vert-3 \right)\)
+		%q
+		\item Hochpunkte: \(H_k\left(\frac{\pi}{5}+\frac{4\pi}{5}k \middle\vert-2 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{3\pi}{5}+\frac{4\pi}{5}k \middle\vert-6 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{2}{5}\pi k \middle\vert-4 \right)\)
+		%r
+		\item Hochpunkte: \(H_k\left(\frac{\pi}{4}k \middle\vert\sqrt{2}+4 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{\pi}{8}+\frac{\pi}{4}k \middle\vert\sqrt{2}-4 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{\pi}{16}+\frac{\pi}{8}k \middle\vert\sqrt{2} \right)\)
+		%s
+		\item Hochpunkte: \(H_k\left(\frac{8}{5}+\frac{16}{5}k \middle\vert\frac{11}{4} \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{16}{5}k \middle\vert-\frac{13}{4} \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{12}{5}+\frac{8}{5}k \middle\vert -\frac{1}{4}\right)\)
+		%t
+		\item Hochpunkte: \(H_k\left(\frac{\pi}{2}+\frac{2\pi}{3}k \middle\vert10 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{\pi}{6}+\frac{2\pi}{3}k \middle\vert2 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{\pi}{3}k \middle\vert6 \right)\)
+		%u
+		\item Hochpunkte: \(H_k\left(\frac{8}{3}k \middle\vert-8 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{4}{3}+\frac{8}{3}k \middle\vert-16 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{2}{3}+\frac{4}{3}k \middle\vert-12 \right)\)
+		%v
+		\item Hochpunkte: \(H_k\left(\frac{\pi}{12}+\frac{\pi}{3}k \middle\vert4 \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{\pi}{4}+\frac{\pi}{3}k \middle\vert0 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{\pi}{6}k \middle\vert2 \right)\)
+		%w
+		\item Hochpunkte: \(H_k\left(\frac{8}{3}\pi+\frac{16}{3}\pi k \middle\vert\frac{7}{8} \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{16}{3}\pi k \middle\vert-\frac{5}{8} \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{4}{3}\pi\frac{8}{3}\pi k \middle\vert\frac{1}{8} \right)\)
+		%x
+		\item Hochpunkte: \(H_k\left(\frac{3}{10}+\frac{2}{5}k \middle\vert-\frac{15}{26} \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{1}{10}+\frac{2}{5}k \middle\vert-\frac{115}{26} \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{1}{5}k \middle\vert-\frac{5}{2} \right)\)
+		%y
+		\item Hochpunkte: \(H_k\left(\frac{3}{10}+\frac{6}{5}k \middle\vert\frac{13}{3} \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(\frac{9}{10}+\frac{6}{5}k \middle\vert1 \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{3}{5}k \middle\vert\frac{8}{3} \right)\)
+		%z
+		\item Hochpunkte: \(H_k\left(3\pi+6\pi k \middle\vert\frac{5}{4} \right),\ k\in\Z\)\\
+		Tiefpunkte: \(T_k\left(6\pi k \middle\vert-\frac{13}{4} \right)\)\\
+		Wendepunkte: \(W_k\left(\frac{3}{2}\pi+3\pi k \middle\vert-1 \right)\)
+	\end{enumerate}
+\end{Answer}

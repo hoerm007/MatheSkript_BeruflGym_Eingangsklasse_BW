@@ -1,0 +1,252 @@
+% !TeX root = ../../Skript.tex
+\cohead{\Large\textbf{Exponentialfunktionen}}
+\fakesubsection{Wachstums- und Zerfallsfunktionen}
+Funktionen vom Typ \(f(x)=a\cdot e^{k\cdot x},\ a > 0,\,k > 0\) bezeichnet man als Wachstumsfunktionen. Funktionen vom Typ \(g(x)=a\cdot e^{k\cdot x},\ a > 0,\,k < 0\) als Zerfallsfunktionen:
+
+\medskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t, padding =0ex 0ex 2ex 0ex}{\begin{minipage}{0.5\textwidth-2ex}
+		\begin{minipage}{\textwidth}
+			\includegraphics[width=\linewidth]{\eFkt/pics/Wachstum\AUSGEFUELLT.png}
+		\end{minipage}%
+
+		\centering Wachstumsfunktion mit \(a\) positiv, \(k\) positiv, z.B. \(f(x)=2e^{0,5x}\)
+	\end{minipage}}%
+	\adjustbox{valign=t, padding =2ex 0ex 0ex 0ex}{\begin{minipage}{0.5\textwidth-2ex}
+		\begin{minipage}{\textwidth}
+			\includegraphics[width=\linewidth]{\eFkt/pics/Zerfall\AUSGEFUELLT.png}
+		\end{minipage}%
+
+		\centering Zerfallsfunktion mit \(a\) positiv, \(k\) negativ, z.B. \(g(x)=10e^{-2x}\)
+	\end{minipage}}%
+\end{minipage}
+
+\medskip
+
+Der Startzeitpunkt liegt im Normalfall bei \(x=0\), der Anfangsbestand lässt sich dann leicht bestimmen:
+
+\begin{tcolorbox}Anfangsbestand:
+	\[\textcolor{loestc}{f(0)=a}\]
+\end{tcolorbox}
+
+Beide Funktionen weisen ein konstantes Wachstum auf (positiv für eine Wachstumsfunktion und negativ für eine Zerfallsfunktion auf). Sie ähneln sich den Geraden. Der Unterschied ist, dass eine Gerade sich immer um den gleichen absoluten Wert ändert, während eine Wachstums-/Zerfallsfunktion sich immer um den gleichen Wert relativ zum aktuellen Bestand ändert.
+
+Eine Gerade mit Steigung 2 wächst um 2, wenn man auf der \(x\)-Achse einen Schritt nach rechts geht. Ähnlich verhält sich die obige Wachstumsfunktion \(f(x)=2e^{0,5x}\):
+
+\medskip
+
+\begin{tabular}{c|| >{\centering\arraybackslash}m{1.3cm}|>{\centering\arraybackslash}m{1.3cm}|>{\centering\arraybackslash}m{1.3cm}|>{\centering\arraybackslash}m{1.3cm}|>{\centering\arraybackslash}m{1.3cm}|>{\centering\arraybackslash}m{1.3cm}|>{\centering\arraybackslash}m{1.3cm}}
+    \(x\)&0&1,3863&2,7726&4,1589&5,5452&6,9315&8,3178\\
+    \hline
+    \(f(x)\)&\textcolor{loes}{2}&\textcolor{loes}{4}&\textcolor{loes}{8}&\textcolor{loes}{16}&\textcolor{loes}{32}&\textcolor{loes}{64}&\textcolor{loes}{128}
+\end{tabular}
+
+\medskip
+
+Der Funktionswert verdoppelt sich immer, wenn man auf der \(x\)-Achse sich um ca. 1,3863 nach rechts bewegt. Eine Gerade wächst also um den gleichen absoluten Wert, d.h. um die gleiche Zahl, während eine Wachstumsfunktion prozentual gleich steigt. Obige Wachstumsfunktion steigt um 100\%, wenn man 1,3863 nach rechts geht.
+
+\begin{tcolorbox}[height=3cm,valign=center]
+    \textcolor{loestc}{Der Funktionswert einer Wachstumsfunktion wächst in gleich großen Abschnitten immer um den gleichen Prozentwert.}
+\end{tcolorbox}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Exercise}[title={Gib an, ob es sich um eine Wachstums- oder Zerfallsfunktion handelt. Bestimme um wie viele Prozentpunkte der Funktionswert jeweils wächst oder fällt, wenn man \(x\) um 1 vergrößert. Bestimme das \(\Delta x\), nach dem sich der Bestand jeweils verdoppelt oder halbiert.}, label=eFktWZA1]
+
+	\begin{minipage}{\textwidth}
+		\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\item \(f(x)=e^{x}\)
+				\item \(f(x)=4e^{\frac{1}{2}x}\)
+				\item \(f(x)=2e^{-2x}\)
+				\item \(f(x)=3e^{-7x}\)
+				\item \(f(x)=\frac{7}{3}e^{x}\)
+				\item \(f(x)=8e^{-3x}\)
+				\item \(f(x)=5e^{-\frac{9}{8}x}\)
+				\item \(f(x)=\frac{5}{3}e^{0,2x}\)
+				\item \(f(x)=0,5e^{-3,5x}\)
+				\item \(f(x)=8.5e^{\frac{1}{10}x}\)
+				\item \(f(x)=20e^{-2x}\)
+				\item \(f(x)=2e^{-7x}\)
+				\item \(f(x)=\frac{10}{9}e^{x}\)
+			\end{enumerate}
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\setcounter{enumi}{13}
+				\item \(f(x)=2e^{-4x}\)
+				\item \(f(x)=6e^{-8x}\)
+				\item \(f(x)=10e^{0,2x}\)
+				\item \(f(x)=\frac{1}{5}e^{-\frac{2}{3}x}\)
+				\item \(f(x)=2e^{0,2x}\)
+				\item \(f(x)=3,6e^{-4x}\)
+				\item \(f(x)=e^{7x}\)
+				\item \(f(x)=\frac{8}{3}e^{\frac{3}{8}x}\)
+				\item \(f(x)=0,1e^{-0,3x}\)
+				\item \(f(x)=5,3e^{-4x}\)
+				\item \(f(x)=5e^{6x}\)
+				\item \(f(x)=0,9e^{-1,1x}\)
+				\item \(f(x)=\frac{11}{6}e^{\frac{8}{7}x}\)
+			\end{enumerate}
+		\end{minipage}%
+	\end{minipage}%
+\end{Exercise}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Answer}[ref=eFktWZA1]
+
+	\begin{minipage}{\textwidth}
+		\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx172\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e^{\frac{1}{2}}\approx65\%\) pro Schritt nach rechts.
+
+                Alle \(2ln(2)\approx1,39\) verdoppelt sich der Funktionswert.
+                \item Zerfallsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+			\end{enumerate}
+		\end{minipage}}%
+		\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\setcounter{enumi}{8}
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \item Wachstumsfunktion
+
+                Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+            \end{enumerate}
+		\end{minipage}}%
+	\end{minipage}%
+
+    \begin{minipage}{\textwidth}
+        \adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+                \begin{enumerate}[label=\alph*)]
+                    \setcounter{enumi}{16}
+                    \item Wachstumsfunktion
+
+                    Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                    Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                    \item Wachstumsfunktion
+
+                    Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                    Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                    \item Wachstumsfunktion
+
+                    Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                    Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                    \item Wachstumsfunktion
+
+                    Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                    Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                    \item Wachstumsfunktion
+
+                    Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                    Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \end{enumerate}
+        \end{minipage}}%
+        \adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+                \begin{enumerate}[label=\alph*)]
+                    \setcounter{enumi}{21}
+                    \item Wachstumsfunktion
+
+                    Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                    Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                    \item Wachstumsfunktion
+
+                    Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                    Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                    \item Wachstumsfunktion
+
+                    Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                    Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                    \item Wachstumsfunktion
+
+                    Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                    Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                    \item Wachstumsfunktion
+
+                    Funktionswert wächst um \(e\approx272\%\) pro Schritt nach rechts.
+
+                    Alle \(ln(2)\approx0,69\) verdoppelt sich der Funktionswert.
+                \end{enumerate}
+        \end{minipage}}%
+    \end{minipage}%
+\end{Answer}
