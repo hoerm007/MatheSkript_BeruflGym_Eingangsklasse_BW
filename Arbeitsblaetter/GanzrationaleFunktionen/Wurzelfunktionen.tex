@@ -1,0 +1,138 @@
+% !TeX root = ../../Skript.tex
+\cohead{\Large\textbf{Wurzelfunktionen}}
+\fakesubsection{Wurzelfunktionen}
+Nachdem wir bereits die Schaubilder vom Typ \(g(x)=ax^n\) und \(h(x)=ax^{-n}\) mit \(n\in\N^*\) kennengelernt haben, wollen wir nun Funktionen vom folgenden Typ betrachten:
+\begin{tcolorbox}[height=2cm, valign=center]
+	\textcolor{loestc}{Funktionen vom Typ \(f(x)=ax^\frac{1}{n}=\sqrt[\leftroot{0}\uproot{1}n]{x},\ n\in\N^*\setminus\{1\}\) bezeichnet man als Wurzelfunktionen.}
+\end{tcolorbox}
+
+\medskip
+
+\textcolor{loes}{Wurzelfunktionen sind die Umkehrfunktionen zu Funktionen vom Typ \({p(x)=x^n,}\) \({n\in\N^*\setminus\{1\}}\). Eine Funktion ordnet jedem \(x\) aus der Definitionsmenge genau ein \(y\) zu. Die Umkehrfunktion soll diese Zuordnung umkehren, d.h. den \(y\)-Werten wieder ihre Ausgangswerte zuordnen. Zum Beispiel ordnet \(p(x)=x^3\) dem \(x\)-Wert 2 den \(y\)-Wert 8 zu: \(p(2)=2^3=8\). Die dritte Wurzel als Umkehrfunktion ordnet also der 8 den Wert 2 zu: \(\sqrt[\leftroot{0}\uproot{1}3]{8}=2\).}
+
+\bigskip
+
+\textbf{Ungerade Wurzeln}
+
+\smallskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t, padding=0ex 0ex 2ex 0ex}{\begin{minipage}{0.4\textwidth-2ex}
+			\centering\includegraphics[width=\textwidth]{\ganzFkt/pics/UngeradeWurzelUmkehrVor.png}
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}[c][5cm]{0.2\textwidth}\centering
+			\textcolor{loes}{Spiegelung}
+			
+			\textcolor{loes}{an der ersten}
+			
+			\textcolor{loes}{Winkelhalbierenden}
+			
+			\textcolor{loes}{\Huge\(\Rightarrow\)}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding=2ex 0ex 0ex 0ex}{\begin{minipage}{0.4\textwidth-2ex}
+		\centering\includegraphics[width=\textwidth]{\ganzFkt/pics/UngeradeWurzelUmkehrNach\iftoggle{ausfuellen}{}{_empty}.png}
+\end{minipage}}%
+\end{minipage}
+
+\medskip
+
+\textcolor{loes}{Da Funktionen vom Typ \(f(x)=x^n,\ n\in\N,\) ungerade und größer 1 jeden \(y\)-Wert in \(\R\) genau einmal treffen, können sie problemlos umgekehrt werden.}
+
+\hspace{1cm}
+
+Definitionsmenge: \textcolor{loes}{\(D=\R\)}
+
+\textcolor{loes}{Die Definitionsmenge der Umkehrfunktion entspricht der Wertemenge der Ausgangsfunktion.}
+
+\hspace{1cm}
+
+Wertemenge: \textcolor{loes}{\(W=\R\)}
+
+\textcolor{loes}{ACHTUNG: Die Wertemenge der Umkehrfunktion entspricht im Allgemeinen nicht der Definitionsmenge der Ausgangsfunktion.}
+
+\newpage
+\textbf{Gerade Wurzeln}
+
+\smallskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t, padding=0ex 0ex 2ex 0ex}{\begin{minipage}{0.4\textwidth-2ex}
+			{\centering\includegraphics[width=\textwidth]{\ganzFkt/pics/GeradeWurzelUmkehrVor.png}}
+			
+			\textcolor{loes}{Der linke, blaue Zweig wird für die Umkehrfunktion ignoriert, damit jeder \(y\)-Wert nur einmal vorkommt.}
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}[c][5cm]{0.2\textwidth}\centering
+			\textcolor{loes}{Spiegelung}
+			
+			\textcolor{loes}{an der ersten}
+			
+			\textcolor{loes}{Winkelhalbierenden}
+			
+			\textcolor{loes}{\Huge\(\Rightarrow\)}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding=2ex 0ex 0ex 0ex}{\begin{minipage}{0.4\textwidth-2ex}
+			{\centering\includegraphics[width=\textwidth]{\ganzFkt/pics/GeradeWurzelUmkehrNach\iftoggle{ausfuellen}{}{_empty}.png}}
+			
+			\textcolor{loes}{Für die Wurzelfunktion wird nur der nun obere, rote Zweig verwendet, da sonst für positive \(x\)-Werte jeweils 2 \(y\)-Werte zur Wahl stehen würden.}
+	\end{minipage}}%
+\end{minipage}
+
+\medskip
+
+\textcolor{loes}{Da die Wertemenge von Funktionen vom Typ \(f(x)=x^n,\ n\in\N\) und gerade gleich \(R^+_0\) ist, kann man in die Umkehrfunktion ebenfalls nur Zahlen größer gleich Null einsetzen.}
+
+\textcolor{loes}{Erinnerung: Eine Funktion ordnet jedem \(x\) aus der Definitionsmenge genau ein \(y\) zu. Verdreht man die \(x\)-Achse und \(y\)-Achse, so könnte man jedem positiven \(x\)-Wert 2 verschiedene \(y\)-Werte zuordnen (da die Ausgangsfunktion jeden positiven \(y\)-Wert zweimal trifft). Um das Problem zu umgehen, dass man für einen \(x\)-Wert verschiedene \(y\)-Werte zur Auswahl hat, wählt man den oberen Zweig, im Schaubild in Rot dargestellt.}
+
+\hspace{1cm}
+
+Definitionsmenge: \textcolor{loes}{\(D=\R^+_0\)}
+
+\textcolor{loes}{Die Definitionsmenge der Umkehrfunktion entspricht der Wertemenge der Ausgangsfunktion.}
+
+\hspace{1cm}
+
+Wertemenge: \textcolor{loes}{\(W=\R^+_0\)}
+
+\textbf{Transformation}
+
+Wurzelfunktionen können wie alle anderen Funktionen auch transformiert werden:
+
+\bigskip 
+
+\begin{minipage}{\textwidth}	
+	\adjustbox{valign=t}{\begin{minipage}{\textwidth/3-2ex}
+		Scheitelform: 
+			
+		\(f(x)=a\cdot\left(x-x_v\right)^2+y_v\)
+	\end{minipage}}%
+	\adjustbox{valign=t, padding=3ex 0ex 3ex 0ex}{\begin{minipage}{\textwidth/3-2ex}
+		Hyperbeln:
+		
+		\(f(x)=a\cdot\left(x-x_v\right)^{-n}+y_v\)
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}{\textwidth/3-2ex}
+		Wurzelfunktionen:
+		
+		\textcolor{loes}{\(f(x)=\sqrt[\leftroot{0}\uproot{1}n]{x-x_v}+y_v\)}
+	\end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+\begin{minipage}{\textwidth}	
+	\adjustbox{valign=t}{\begin{minipage}{\textwidth/2}
+		\(a\): Streckfaktor in \(y\)-Richtung
+		
+		\(x_v\): Verschiebung in \(x\)-Richtung
+		
+		\(y_v\): Verschiebung in \(y\)-Richtung	
+		
+		\bigskip
+		
+		Bsp.: \(f(x)=-\sqrt{x-1}+2\)
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}{\textwidth/2}
+		\centering\includegraphics[width=\textwidth]{\ganzFkt/pics/WurzelTransformiert\iftoggle{ausfuellen}{}{_empty}.png}
+	\end{minipage}}%
+\end{minipage}
+

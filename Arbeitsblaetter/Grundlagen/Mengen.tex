@@ -18,7 +18,7 @@ Die Mengenlehre ist ein grundlegendes Teilgebiet der Mathematik. Wir werden uns 
         Die rationalen Zahlen enthalten alle Zahlen, die sich als Brüche mit einem Zähler aus den ganzen Zahlen und einem Nenner aus den natürlichen Zahlen (natürlich ohne der 0) darstellen lassen.
 		\item Die reellen Zahlen: \(\R\)
 
-        In den reellen Zahlen \(\R\) liegen "`alle"' Zahlen, zumindest alle uns bekannten Zahlen. \(\R\) beinhaltet neben \(\Q\) auch Zahlen wie \(\sqrt{2}\) oder \(\pi\).
+        In den reellen Zahlen \(\R\) liegen "`alle"' Zahlen, zumindest alle uns bekannten Zahlen. \(\R\) beinhaltet neben \(\Q\) auch Zahlen wie \(\sqrt{2}\) oder \(\pi\). Die Teilmengen \(\R_+\) bzw. \(\R_-\) beinhalten alle Zahlen größer bzw. kleiner Null.
 	\end{itemize}
 \end{tcolorbox}
 Mengen lassen sich auf verschiedene Arten darstellen. Nehmen wir als Beispiele die Menge aller positiven, geraden Zahlen \(G\) und die Menge \(H\) aller Zahlen, die größer oder gleich \(1\) und kleiner \(2\) sind:
@@ -26,7 +26,53 @@ Mengen lassen sich auf verschiedene Arten darstellen. Nehmen wir als Beispiele d
 	\item Aufzählung: \({G=\{2; 4; 6; 8; 10;\ldots \}}\)
 	\item Einschränkung einer übergeordneten Menge \({G=\{x\in\N|x\text{ ist gerade}\}}\) oder
 
-	\({H=\{x\in\R|-1<=x<2\}}\)
-	\item Darstellung als Intervall: \(H=[-1;2)\) Dabei steht die eckige Klammer für ein abgeschlossenes Ende, d.h. die Grenze liegt noch im Intervall und die runde Klammer für ein offenes Intervall, d.h. die Grenze liegt nicht mehr im Intervall.
+	\({H=\{x\in\R|-1\leq x<2\}}\)
+	\item Darstellung als Intervall: \(H=[-1;2)\) Dabei steht die eckige Klammer für ein abgeschlossenes Ende, d.h. die Grenze liegt noch im Intervall und die runde Klammer für ein offenes Intervall, d.h. die Grenze liegt nicht mehr im Intervall. Hat ein Intervall \(-\infty\) als linke Grenze oder \(\infty\) als rechte Grenze, so muss diese Seite des Intervalls immer offen sein. Bei der Darstellung als Intervall geht man immer von \(\R\) als der Grundmenge aus.
 \end{itemize}
 Liegt eine Zahl in einer Menge, z.B. \(-2\) in \(\Q\), so schreibt man \({-2\in\Q}\) (Sprich \(-2\) ist Element der rationalen Zahlen).
+
+Mit dem \(\setminus\)-Symbol kann man aus einer Menge einen Teil herausnehmen, z.B. ist \(\R\setminus(-\infty;0]\) gleich der Menge \(\R_+\).
+\newpage
+\begin{Exercise}[title={Gib die folgenden Mengen als Einschränkung einer übergeordneten Menge oder als Intervall an.}, label=mengenA1]
+
+    \begin{minipage}{\textwidth}
+        \adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+            \begin{enumerate}[label=\alph*)]
+                \item \(A\): Alle reellen Zahlen größer 5.
+                \item \(B\): Alle reellen Zahlen größer gleich -2 und kleiner 5.
+                \item \(C\): Alle reellen Zahlen kleiner gleich 8.
+                \item \(D\): Alle reellen Zahlen kleiner 2.
+                \item \(E\): Alle Zahlen, deren Quadrat größer 4 ist.
+            \end{enumerate}%
+        \end{minipage}}%
+        \adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+            \begin{enumerate}[label=\alph*)]
+                \setcounter{enumi}{5}
+                \item \(F\): Alle Zahlen, deren Quadrat kleiner gleich 9 ist.
+                \item \(G\): Alle reellen Zahlen, die keine ganze Zahl sind.
+                \item \(H\): Alle Brüche, deren Zähler mindestens doppelt so groß wie der Nenner ist.
+                \item \(I\): Alle Brüche, deren Kehrwert größer 1 ist.
+                \item \(J\): Alle geraden natürlichen Zahlen.
+            \end{enumerate}%
+        \end{minipage}}%
+    \end{minipage}%
+\end{Exercise}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Answer}[ref=mengenA1]
+
+\begin{minipage}{\textwidth}
+        \begin{enumerate}[label=\alph*)]
+            \item \(A=(5;\infty)=\{x\in\R\vert x>5\}\)
+            \item \(B=[-2;5)=\{x\in\R\vert -2\leq x<5\}\)
+            \item \(C=(-\infty;8]=\{x\in\R\vert x\leq8\}\)
+            \item \(D=(-\infty;2)=\{x\in\R\vert x<2\}\)
+            \item \(E=(-\infty;-2)\text{ und }(2;\infty)=\{x\in\R\vert x<-2\text{ oder }x>2\}\)
+            \item \(F=[-3;3]=\{x\in\R\vert -3\leq x\leq 3\}\)
+            \item \(G=\R\setminus\Z\)
+            \item \(H=\{\frac{n}{m}\vert m,n\in\N^*,\ n\geq 2m\}\)
+            \item \(I=\{\frac{n}{m}\vert m,n\in\N^*,\ m>n\}\)
+            \item \(J=\{x\in\N\vert x\text{ gerade}\}\)
+        \end{enumerate}%
+\end{minipage}%
+\end{Answer}

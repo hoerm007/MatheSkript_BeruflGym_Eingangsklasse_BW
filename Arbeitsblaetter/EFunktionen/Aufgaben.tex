@@ -1,7 +1,16 @@
 % !TeX root = ../../Skript.tex
 \cohead{\Large\textbf{Vermischte Aufgaben}}
 \fakesubsection{Vermischte Aufgaben}
-Die folgenden Aufgaben sind Aufgaben aus alten Abschlussprüfungen nachempfunden. Es ist jeweils angegeben, wie viel Zeit in der Abschlussprüfung zur Bearbeitung der Aufgabe zur Verfügung stehen würde.
+\begin{Exercise}[title={Zeitansatz 10 min, ohne Taschenrechner}, label=eFktVA_PBA1]%Nachempfunden der PBA Abitur 2024/25
+	
+	Gegeben sind folgende 3 Eigenschaften einer Funktion \(f(x)\):
+	\begin{enumerate}[label=\Alph*)]
+		\item Die Funktion ist eine Exponentialfunktion.
+		\item Für \(x\rightarrow -\infty\) gilt \(f(x)\rightarrow -\infty\)
+		\item Das Schaubild hat die Asymptote \(y=1\).
+	\end{enumerate}
+	Gib für alle möglichen Kombinationen jeweils ein Beispiel an, so dass alle 3 Eigenschaften, genau 2 Eigenschaften (außer Kombination B und C), genau 1 Eigenschaft oder keine der Eigenschaften erfüllt wird.
+\end{Exercise}
 \begin{Exercise}[title={Zeitansatz 8 min, ohne Taschenrechner}, label=eFktVA_1]%2018-1.3
 
 Lösen Sie die Gleichung \(e^{2x}-4e^x=0\)
@@ -151,6 +160,25 @@ Es gilt \(a=97\).
 \end{Exercise}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Answer}[ref=eFktVA_PBA1]
+	Mögliche Lösungen:
+	\begin{itemize}
+		\item Alle 3 Eigenschaften: \(f_3(x)=-e^{-x}+1\)
+		\item Nur Eigenschaften A und B: \(f_{AB}(x)=-e^{-x}\)
+		\item Nur Eigenschaften A und C: \(f_{AC}(x)=e^x+1\)
+		\item Nur Eigenschaften B und C: Mit den uns bekannten Mitteln lässt sich keine solche Funktion darstellen, man könnte dies aber z.B. wie folgt darstellen:
+		
+		\(f_{BC}=\begin{cases}-\left(x+1\right)^{-2}+1&\text{für }x\geq0\\-\left(x-1\right)^2+1&\text{für }x<0\end{cases}\)
+		
+		\adjustbox{valign=t, padding*=0ex 5ex 10ex 0ex}{\begin{minipage}{\textwidth-10ex}\centering
+				\includegraphics[width=\textwidth]{\eFkt/pics/PBA2425.png}
+		\end{minipage}}%
+		\item Nur Eigenschaft A: \(f_A(x)=e^x\)
+		\item Nur Eigenschaft B: \(f_B(x)=-x\)
+		\item Nur Eigenschaft C: \(f_C(x)=x^{-1}+1\)
+		\item Keine der Eigenschaften: \(f_0(x)=0\)
+	\end{itemize}
+\end{Answer}
 \begin{Answer}[ref=eFktVA_1]
     \begin{align*}
         e^{2x}-4e^x&=0\\
