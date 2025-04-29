@@ -29,6 +29,7 @@
 \usepackage{marvosym}                       %\Lightning
 \usepackage{multirow}
 \usepackage{etoolbox}
+\usepackage[c]{esvect}						%\vv{arg} Vektoren mit langem Pfeil
 %%%%%%%%%%%%%%%%%%%%%%% MATHE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %d des dx für Integrale
 \newcommand{\td}{\ \text{d}}
@@ -46,6 +47,8 @@
 %Umkringelte Nummern für LGS
 \newcommand*\gaussrow[1]{\tikz[baseline=(char.base)]{
         \node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
+%Spaltenvektoren
+\newcommand{\spvek}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
 
 %%%%%%%%%%%%%%%%%%%% IF-TOGGLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtoggle{qrcode} %Steuert das Erstellen der QR-Codes
@@ -91,6 +94,9 @@
 %	enlarge left by=0mm,
 %	boxsep=5pt,
 %	arc=0pt,outer arc=0pt,
+	halign=flush left,
+	valign=top,
+	sidebyside align=top
 }
 %Fake(sub)sections tauchen im Inhaltsverzeichnis auf, erstellen im Dokument aber keine Überschriften
 \newcommand{\fakesection}[1]{%
@@ -288,7 +294,7 @@
 %	\newpage
 %	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Wurzelfunktionen.tex}%TODO
 %	\newpage
-%\input{./Arbeitsblaetter/GanzrationaleFunktionen/Wurzelgleichungen.tex}%TODO
+%	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Wurzelgleichungen.tex}%TODO
 %	\newpage
 %	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Stetigkeit.tex}%TODO erstellen
 %	\newpage
@@ -297,7 +303,7 @@
 %	\input{./Arbeitsblaetter/GanzrationaleFunktionen/AnwendungUndOptimierung.tex}%TODO erstellen
 %	\newpage
 %	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	\fakesection{Exponentialfunktionen}%TODO andere Basis als e
+%	\fakesection{Exponentialfunktionen}
 %	\input{./Arbeitsblaetter/EFunktionen/Einfuehrung.tex}
 %	\newpage
 % 	\input{./Arbeitsblaetter/EFunktionen/Begriffe.tex}
@@ -311,12 +317,10 @@
 % 	\input{./Arbeitsblaetter/EFunktionen/FktAuf.tex}
 % 	\newpage
 %	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Transformationen.tex}%TODO erstellen
-%	\newpage
-% 	\input{./Arbeitsblaetter/EFunktionen/SchiefeAsymptoten.tex}%TODO asymptotisches Verhalten aufschreiben
 % 	\newpage
-% 	\input{./Arbeitsblaetter/EFunktionen/NaehrungsweiseNST.tex}
+% 	\input{./Arbeitsblaetter/EFunktionen/Basiswechsel.tex}%TODO erstellen
 % 	\newpage
- 	\input{./Arbeitsblaetter/EFunktionen/Aufgaben.tex}
+% 	\input{./Arbeitsblaetter/EFunktionen/Aufgaben.tex}
 % 	\newpage
 %   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   \fakesection{Modellierung}
@@ -324,15 +328,17 @@
 % 	\newpage
 %   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   \fakesection{Vektorgeometrie}
-% 	\input{./Arbeitsblaetter/Vektorgeometrie/Begriffe.tex}%TODO erstellen
+% 	\input{./Arbeitsblaetter/Vektorgeometrie/Vektorbegriff.tex}
+% 	\newpage
+% 	\input{./Arbeitsblaetter/Vektorgeometrie/Koordinatendarstellung.tex}
+% 	\newpage
+ 	\input{./Arbeitsblaetter/Vektorgeometrie/Rechenoperationen.tex}%TODO erstellen
+% 	\newpage
+% 	\input{./Arbeitsblaetter/Vektorgeometrie/R3.tex}%TODO erstellen
 % 	\newpage
 %    \input{./Arbeitsblaetter/Vektorgeometrie/Projektion.tex}%TODO erstellen
 %    \newpage
 %    \input{./Arbeitsblaetter/Vektorgeometrie/Spiegelung.tex}%TODO erstellen
-%    \newpage
-%    \input{./Arbeitsblaetter/Vektorgeometrie/Addition.tex}%TODO erstellen
-%    \newpage
-%    \input{./Arbeitsblaetter/Vektorgeometrie/MultiplikationSkalar.tex}%TODO erstellen
 %    \newpage
 %    \input{./Arbeitsblaetter/Vektorgeometrie/Betrag.tex}%TODO erstellen
 %    \newpage
