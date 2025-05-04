@@ -5,19 +5,19 @@ Vergegenwärtigen wir uns nochmals die auf den reellen Zahlen bekannten Rechenop
 
 \textbf{Addition}
 
-Für zwei beliebige Zahlen \(a,\ b\in\R\) haben wir die Addition mit dem Rechenzeichen \(+\) definiert. Dabei gilt
+Für zwei beliebige Zahlen \(a,\ b\in\R\) haben wir die Addition mit dem Rechenzeichen \(+\) als binäre Verknüpfung definiert \(+:\R\times\R\rightarrow\R\). Dabei gilt
 
 \begin{itemize}
 	\item Das Ergebnis der Addition ist ebenfalls wieder eine reelle Zahl. \(a+b=c\in\R\).
 	\item Die Addition ist kommutativ: \(a+b=b+a\)
 	\item Es gibt ein Neutralelement der Addition, das wir 0 nennen für das gilt: \(a+0=a\) für alle \(a\in\R\)
-	\item Für alle \(a\in\R\) gibt es ein inverses Element in den reellen Zahlen, das wir \(-a\in\R\) nennen, so dass \(a+(-a)=0\) gilt.
+	\item Für alle \(a\in\R\) gibt es ein inverses Element bezüglich der Addition in den reellen Zahlen, das wir \(-a\in\R\) nennen, so dass \(a+(-a)=0\) gilt.
 	\item Für die Addition gilt das Assoziativgesetz: \((a+b)+c=a+(b+c)\) für alle \(a,\ b,\ c\in\R\)
 \end{itemize}
 
 \textbf{Multiplikation}
 
-Für zwei beliebige Zahlen \(a,\ b\in\R\) haben wir die Multiplikation mit dem Rechenzeichen \(\cdot\) definiert. Dabei gilt
+Für zwei beliebige Zahlen \(a,\ b\in\R\) haben wir die Multiplikation mit dem Rechenzeichen \(\cdot\) ebenfalls als binäre Verknüpfung definiert \(\cdot:\R\times\R\rightarrow\R\). Dabei gilt
 
 \begin{itemize}
 	\item Das Ergebnis der Multiplikation ist ebenfalls wieder eine reelle Zahl. \(a\cdot b=c\in\R\).
@@ -30,3 +30,75 @@ Für zwei beliebige Zahlen \(a,\ b\in\R\) haben wir die Multiplikation mit dem R
 Für die Verknüpfung der beiden Operationen gilt das Distributivgesetz:
 
 \(a\cdot (b+c)=a\cdot b+a\cdot c\)
+\newpage
+Für Vektoren müssen wir neue Rechenoperationen definieren. Wir werden bis zum Abitur die beiden Vektorräume \(\R^2\) und \(\R^3\) betrachten. Bisher bewegen wir uns im \(\R^2\), d.h. wir haben 2 Dimensionen (grafisch die \(x_1\)- und \(x_2\)-Achsen) und die Komponenten der Vektoren sind Zahlen aus den reellen Zahlen \(\R\).
+
+\textbf{Addition zweier Vektoren}
+
+Die Addition zweier Vektoren lässt sich grafisch als das Hintereinanderlegen der beiden Vektoren definieren. Das Ergebnis ist wieder ein Vektor:
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t, margin=0ex 0ex 5ex 0ex}{\begin{minipage}{0.5\textwidth-5ex}\raggedright
+			Wir addieren die beiden Vektoren \(\vv{a}=\spvek{\textcolor{loes}{2}}{\textcolor{loes}{7}}\) und \(\vv{b}=\spvek{\textcolor{loes}{8}}{\textcolor{loes}{-3}}\) grafisch durch hintereinander legen und erhalten \(\vv{a}+\vv{b}=\vv{c}=\textcolor{loes}{\spvek{10}{4}}\)
+	\end{minipage}}%
+		\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+		\includegraphics[width=\textwidth]{\vektor/pics/VektoradditionR2_empty.png}%TODO Bild aufdoppeln
+	\end{minipage}}%
+\end{minipage}
+
+\begin{tcolorbox}
+	\textbf{Vektoraddition}
+	
+	\textcolor{loestc}{Die Vektoraddition ist komponentenweise definiert, d.h. die Summe zweier Vektoren erhält man, indem man ihre Komponenten jeweils addiert:}
+	
+	\[\textcolor{loestc}{\vv{a}+\vv{b}=\spvek{a_1+b_1}{a_2+b_2}=\spvek{b_1+a_1}{b_2+a_2}=\vv{b}+\vv{a}}\]
+\end{tcolorbox}
+\newpage
+\textbf{Multiplikation eines Vektors mit einer Zahl/Skalar}
+
+Die Multiplikation eines Vektors \(\vv{a}\) mit einem Skalar \(r\) lässt sich grafisch als Strecken \(r>1\) bzw. Stauchen \(0<r<1\) interpretieren. Ist \(r\) negativ, so soll das Ergebnis die \(\vv{a}\) entgegengesetzte Richtung haben, also parallel zum Gegenvektor von \(\vv{a}\) verlaufen.
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{\vektor/pics/MultiplikationMitSkalarR2_empty.png}%TODO Bild aufdoppeln
+	\end{minipage}}%
+	\adjustbox{valign=t, margin=5ex 0ex 0ex 0ex}{\begin{minipage}{0.5\textwidth-5ex}\raggedright
+			Wir strecken den Vektor \(\vv{a}=\spvek{\textcolor{loes}{\phantom{-}4}}{\textcolor{loes}{\phantom{-}2}}\) mit den Faktoren \(r_1=0,5\), \(r_2=2\) und \(r_3=-1\):
+			
+			\(0,5\vv{a}=\spvek{\textcolor{loes}{\phantom{-}2}}{\textcolor{loes}{\phantom{-}1}}\)\qquad\(2\vv{a}=\spvek{\textcolor{loes}{\phantom{-}8}}{\textcolor{loes}{\phantom{-}4}}\)
+			
+			\(-1\vv{a}=\spvek{\textcolor{loes}{-4}}{\textcolor{loes}{-2}}\)
+	\end{minipage}}%
+\end{minipage}
+
+\begin{tcolorbox}
+	\textbf{Multiplikation mit einem Skalar}
+	
+	\textcolor{loestc}{Die Multiplikation mit einem Skalar ist komponentenweise definiert, d.h. einen Vektor multipliziert man mit einem Skalar, indem man seine Komponenten jeweils mit dem Skalar multipliziert:}
+	
+	\[\textcolor{loestc}{r\vv{a}=\spvek{r\cdot a_1}{r\cdot a_2}}\]
+\end{tcolorbox}
+
+Es gelten folgende Rechengesetze:
+\begin{enumerate}
+	\item {Kommutativgesetz:} \(\vv{a}+\vv{b}=\vv{b}+\vv{a}\) für alle \(\vv{a},\ \vv{b}\in\R^2\)
+	\item {Assoziativgesetz:} \(\vv{a}+\left(\vv{b}+\vv{c}\right)=\left(\vv{a}+\vv{b}\right)+\vv{c}\) für alle \(\vv{a},\ \vv{b},\ \vv{c}\in\R^2\)
+	\item {\(\vv{o}\) ist Neutralelement der Addition:} \(\vv{a}+\vv{o}=\vv{a}\) für alle \(\vv{a}\in\R^2\)
+	\item {Jeder Vektor hat ein Inverses bezüglich der Addition:} Für alle \(\vv{a}\in\R^2\) gibt es ein \(\vv{a}^*\in\R^2\), so dass \(\vv{a}+\vv{a}^*=\vv{o}\)
+	\item {Verträglichkeit:} \(r\cdot \left(s\cdot\vv{a}\right)=(r\cdot s)\cdot\vv{a}\) für alle \(\vv{a}\in\R^2\) und alle \(r,\ s\in\R\)
+	\item {Distributivgesetz Typ1:} \(r\cdot\left(\vv{a}+\vv{b}\right)=r\cdot\vv{a}+r\cdot\vv{b}\) für alle \(\vv{a},\ \vv{b}\in\R^2\) und alle \(r\in\R\)
+	\item {Distributivgesetz Typ2:} \((r+s)\cdot\vv{a}=r\cdot\vv{a}+s\cdot\vv{a}\) für alle \(\vv{a}\in\R^2\) und alle \(r,\ s\in\R\)
+\end{enumerate}
+
+\begin{Exercise}[title={\raggedright Zeige, dass die obigen Rechengesetze gelten.}, label=VektorenRechnenA1]
+	
+\end{Exercise}
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{Answer}[ref=VektorenRechnenA1]
+%	%TODO
+%\end{Answer}
