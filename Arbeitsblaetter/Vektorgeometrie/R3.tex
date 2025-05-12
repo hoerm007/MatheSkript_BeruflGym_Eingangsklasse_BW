@@ -1,4 +1,58 @@
 % !TeX root = ../../Skript.tex
 \cohead{\Large\textbf{\(\R^3\)}}
 \fakesubsection{\texorpdfstring{\(\R^3\)}{Dreidimensionales Koordinatensystem}}
-Bisher haben wir Vektoren im bereits bekannten 2-dimensionalen kartesischen Koordinatensystem betrachtet. Dieses erweitern wir nun um eine dritte Achse, die senkrecht auf die beiden anderen Achsen steht. Zum Zeichnen werden wir die \(x_1\)-Achse schräg im \(135^\circ\)-Winkel nach vorne zeichnen (wie von Schrägbildern bereits bekannt):
+Bisher haben wir Vektoren im bereits bekannten 2-dimensionalen kartesischen Koordinatensystem betrachtet. Dieses erweitern wir nun um eine dritte Achse, die senkrecht auf die beiden anderen Achsen steht. Zum Zeichnen werden wir die \(x_1\)-Achse schräg im \(135^\circ\)-Winkel nach vorne zeichnen und um den Faktor \(1/\sqrt{2}\) verkürzen (wie von Schrägbildern bereits bekannt):
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t, margin=0ex 0ex 5ex 0ex}{\begin{minipage}{0.3\textwidth-5ex}\raggedright
+			Im dreidimensionalen geben wir für Punkte einfach 3 Koordinaten (statt 2) an: \[A(x_1\vert x_2\vert x_3)\]
+			
+			Genauso wird die Koordinatendarstellung von Vektoren um einen dritten Eintrag ergänzt: \[\vv{a}=\spvvv{a_1}{a_2}{a_3}\]
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}{0.7\textwidth}
+			\includegraphics[width=\textwidth]{\vektor/pics/R3_empty.png}
+	\end{minipage}}%
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Exercise}[title={}, label=R3A1]
+	\begin{enumerate}[label=\alph*)]
+		\item Zeichne die Punkte \(A(2\vert3\vert{-1})\) und \(B(0\vert2\vert{-2})\) ein. Gib dann einen großen Nachteil des dreidimensionalen Koordinatensystems im Vergleich zum zweidimensionalen an.
+		\item Gib die Koordinaten zweier Punkte an, die auf der \(x_1\)-Achse liegen. Gib dann alle möglichen Punkte an, die auf der \(x_1\)-Achse liegen.
+		\item Die \(x_2\)-\(x_3\)-Ebene entspricht der Menge aller Punkte, deren \(x_1\)-Koordinate Null ist. Gib 2 mögliche Punkte an.
+		\item Gib alle Punkte an, die in der \(x_1\)-\(x_3\)-Ebene liegen.
+	\end{enumerate}
+\end{Exercise}
+\newpage
+Die Vektoraddition sowie Multiplikation mit einem Skalar lassen sich auch auf drei Dimensionen übertragen:
+
+\begin{tcolorbox}
+	\textbf{Vektoraddition}
+	
+	\textcolor{loestc}{Die Vektoraddition ist komponentenweise definiert, d.h. die Summe zweier Vektoren erhält man, indem man ihre Komponenten jeweils addiert:}
+	
+	\[\textcolor{loestc}{\vv{a}+\vv{b}=\spvvv{a_1+b_1}{a_2+b_2}{a_3+b_3}=\spvvv{b_1+a_1}{b_2+a_2}{b_3+a_3}=\vv{b}+\vv{a}}\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+	\textbf{Multiplikation mit einem Skalar}
+	
+	\textcolor{loestc}{Die Multiplikation mit einem Skalar ist komponentenweise definiert, d.h. einen Vektor multipliziert man mit einem Skalar, indem man seine Komponenten jeweils mit dem Skalar multipliziert:}
+	
+	\[\textcolor{loestc}{r\vv{a}=\spvvv{r\cdot a_1}{r\cdot a_2}{r\cdot a_3}}\]
+\end{tcolorbox}
+
+\begin{Exercise}[title={}, label=R3A2]
+	\begin{enumerate}[label=\alph*)]
+		\item Können wir die Methode zum Spiegeln an Punkten, die wir im Zweidimensionalen betrachtet haben, auch für ein dreidimensionales Koordinatensystem verwenden?
+		\item Können wir die Methode zum Teilen von Strecken, die wir im Zweidimensionalen betrachtet haben, auch für ein dreidimensionales Koordinatensystem verwenden?
+	\end{enumerate}
+\end{Exercise}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{Answer}[ref=R3A1]
+%	TODO
+%\end{Answer}
+%\begin{Answer}[ref=R3A2]
+%	TODO
+%\end{Answer}

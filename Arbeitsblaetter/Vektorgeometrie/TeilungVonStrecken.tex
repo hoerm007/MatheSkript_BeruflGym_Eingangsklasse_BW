@@ -1,3 +1,35 @@
 % !TeX root = ../../Skript.tex
 \cohead{\Large\textbf{Teilung von Strecken}}
 \fakesubsection{Teilung von Strecken}
+Das Teilen von Strecken funktioniert im Wesentlichen wie die Spiegelung an einem Punkt.
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t, margin=0ex 0ex 5ex 0ex}{\begin{minipage}{0.4\textwidth-5ex}\raggedright
+			Welcher Punkt \(T\) teilt die Strecke zwischen den Punkten \(A(2\vert5)\) und \(B(-4\vert1)\) im Verhältnis 2:1?
+			
+			\textcolor{loes}{Der Ortsvektor \(\vv{a}=\spvv{2}{5}\) führt vom Ursprung zum \(A\).}
+			
+			\textcolor{loes}{Von dort entspricht der Verbindungsvektor \(\vv{AB}=\vv{b}-\vv{a}=\spvv{-4}{1}-\spvv{2}{5}=\spvv{-6}{-4}\) der kompletten Strecke.}
+			
+			\textcolor{loes}{Im Verhältnis 2:1 bedeutet, dass wir die Strecke in 3 gleich große Teile stückeln und dann 2 dieser 3 Teile vom Punkt \(A\) aus zurücklegen:}
+			
+			
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}{0.6\textwidth}
+			\includegraphics[width=\textwidth]{\vektor/pics/TeilungStrecken_empty.png}%TODO Bild aufdoppeln
+	\end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+\textcolor{loes}{\(\vv{t}=\vv{a}+\frac{2}{3}\cdot\vv{AB}=\spvv{2}{5}+\frac{2}{3}\cdot\spvv{-6}{-4}=\spvv{-2}{\frac{7}{3}}\) Der gesuchte Punkt ist also \(T\left(-2\middle\vert\frac{7}{3}\right)\)}
+
+\begin{tcolorbox}
+	\textbf{Teilen von Strecken}
+	
+	\textcolor{loestc}{Teilt man die Strecke zwischen den Punkten \(A\) und \(B\) in einem Verhältnis \(X:Y\), so erhält man den Punkt \(T\), der die Strecke teilt über:}
+	
+	\textcolor{loestc}{\[\vv{t}=\vv{a}+\frac{X}{X+Y}\cdot\vv{AB}\]}
+\end{tcolorbox}

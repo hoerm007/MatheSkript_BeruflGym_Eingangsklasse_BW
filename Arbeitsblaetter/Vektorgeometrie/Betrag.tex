@@ -1,3 +1,62 @@
 % !TeX root = ../../Skript.tex
 \cohead{\Large\textbf{Betrag eines Vektors}}
 \fakesubsection{Betrag eines Vektors}
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t, margin=0ex 0ex 5ex 0ex}{\begin{minipage}{0.55\textwidth-5ex}\raggedright
+			Ein Vektor hat eine Richtung und eine Länge. Die Länge bezeichnet man auch als den Betrag des Vektors. Das mathematische Symbol für den Betrag sind zwei vertikale Striche: \(\abs{\vv{v}}\)
+			
+			Die Länge eines Vektors entspricht der Raumdiagonalen eines Quaders mit den Seitenlängen, die den Beträgen der Komponenten des Vektors entsprechen. 
+			
+			\textcolor{loes}{Berechnen der Diagonalen \(d\) des Rechtecks mit Seitenlängen \(x_1\) und \(x_2\):}
+			
+			\(\textcolor{loes}{d^2=x_1^2+x_2^2}\)
+			
+			\textcolor{loes}{Damit ergibt sich für den Betrag:}
+			
+			\begin{align*}
+				\textcolor{loes}{\abs{\vv{v}}\,}&\textcolor{loes}{=d^2+x_3^2}\\
+				&\textcolor{loes}{=x_1^2+x_2^2+x_3^2}
+			\end{align*}
+			
+			\bigskip
+			
+			Der Betrag ist eine Abbildung, die aus dem \(\R^3\) oder \(\R^3\) auf \(\R\) abbildet: \(\abs{\cdot}:\R^3\rightarrow\R\)
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{\vektor/pics/Betrag.png}
+	\end{minipage}}%
+\end{minipage}
+
+\begin{tcolorbox}
+	\textbf{Betrag eines Vektors}
+	
+	\textcolor{loestc}{Der Betrag bzw. die Länge eines Vektors lässt sich wie folgt berechnen:}
+	
+	\[\textcolor{loestc}{\abs{\vv{v}}=\abs{\spvvv{x_1}{x_2}{x_3}}=\sqrt{x_1^2+x_2^2+x_3^2}\text{ im }\R^3\text{ und }\abs{\vv{v}}=\abs{\spvv{x_1}{x_2}}=\sqrt{x_1^2+x_2^2}\text{ im }\R^2}\]
+	
+	\bigskip
+	
+\end{tcolorbox}
+
+\begin{tcolorbox}
+	\textbf{Einheitsvektoren}
+	
+	\textcolor{loestc}{Der Einheitsvektor eines Vektors \(\vv{v}\) für \(\vv{v}\neq \vv{o}\) ist der Vektor, der die gleiche Richtung hat und die Länge 1:}
+	
+	\[\textcolor{loestc}{\vv{v_0}=\frac{\vv{v}}{\abs{\vv{v}}}}\]
+	
+	\bigskip
+	
+\end{tcolorbox}
+Hinweis: Man spricht auch vom Normieren eines Vektors, wenn man seine Länge auf 1 bringt. Es gibt verschiedene Notationen für einen Einheitsvektor, z.B. \(\vv{v_0}=\vv{e_v}=\hat{v}\)
+
+Die Einheitsvektoren parallel zu den Achsen bezeichnet man mit einem \(e\), z.B. \(\vv{e_1}=\spvvv{1}{0}{0}\)
+%\begin{Exercise}[title={\raggedright xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}, label=VektorenBetragA1]
+%	
+%\end{Exercise}
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{Answer}[ref=VektorenBetragA1]
+%	%TODO
+%\end{Answer}

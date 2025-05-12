@@ -1,3 +1,35 @@
 % !TeX root = ../../Skript.tex
 \cohead{\Large\textbf{Spiegelung an einem Punkt}}
 \fakesubsection{Spiegelung an einem Punkt}
+
+Wir betrachten im folgenden die bereits bekannte Punktspiegelung. Diesmal verwenden wir Vektoren. Zudem wird sich die Vorgehensweise aus 2 Dimensionen problemlos auf 3 Dimensionen übertragen lassen:
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t, margin=0ex 0ex 5ex 0ex}{\begin{minipage}{0.4\textwidth-5ex}\raggedright
+			Wir wollen den Punkt \(P(2\vert3)\) am Punkt \(S(-3\vert{-1})\) spiegeln.
+			
+			\textcolor{loes}{Der Ortsvektor \(\vv{p}=\spvv{2}{3}\) führt vom Ursprung zum \(P\).}
+			
+			\textcolor{loes}{Von dort ist der Abstand zum Punkt \(S\) durch den Verbindungsvektor \(\vv{PS}=\vv{s}-\vv{p}=\spvv{-3}{-1}-\spvv{2}{3}=\spvv{-5}{-4}\) gegeben.}
+			
+			\textcolor{loes}{Für eine Spiegelung müssen wir auf einer geraden Linie vom Punkt \(P\) zum Punkt \(S\) laufen und dann nochmals die gleiche Strecke zurücklegen, also zwei Mal \(\vv{PS}\):}
+	\end{minipage}}%
+		\adjustbox{valign=t}{\begin{minipage}{0.6\textwidth}
+		\includegraphics[width=\textwidth]{\vektor/pics/SpiegelungPunkt_empty.png}%TODO Bild aufdoppeln
+		
+		\medskip
+		
+		\textcolor{loes}{\(\vv{p}^*=\vv{p}+2\cdot\vv{PS}=\spvv{2}{3}+2\cdot\spvv{-5}{-4}=\spvv{-8}{-5}\)}
+	\end{minipage}}%
+\end{minipage}
+
+\begin{tcolorbox}
+	\textbf{Spiegelung an einem Punkt}
+
+	\textcolor{loestc}{Spiegelt man einen Punkt \(P\) an einem Punkt \(S\), so erhält man den Ortsvektor \(P^*\) über}
+	
+	\textcolor{loestc}{\[\vv{p}^*=\vv{p}+2\cdot\vv{PS}\]}
+\end{tcolorbox}
+
